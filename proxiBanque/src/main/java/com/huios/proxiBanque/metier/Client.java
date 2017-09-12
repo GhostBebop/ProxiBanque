@@ -10,7 +10,15 @@ public abstract class Client {
 	private List<Compte> mesComptes = new ArrayList<Compte>();
 	private Conseiller monConseiller;
 	private int id;
+	private String typeClient;
 	
+	
+	public String getTypeClient() {
+		return typeClient;
+	}
+	public void setTypeClient(String typeClient) {
+		this.typeClient = typeClient;
+	}
 	public int getId() {
 		return id;
 	}
@@ -29,9 +37,10 @@ public abstract class Client {
 	public void setMonConseiller(Conseiller monConseiller) {
 		this.monConseiller = monConseiller;
 	}
+	
 	@Override
 	public String toString() {
-		return "Client [monConseiller=" + monConseiller + ", id=" + id + "]";
+		return "Client [monConseiller=" + monConseiller + ", id=" + id + ", typeClient=" + typeClient + "]";
 	}
 	public void ajouterCompte(Compte c) {
 		mesComptes.add(c);

@@ -8,6 +8,15 @@ public class Particulier extends Client{
 	private String prenom;
 	private String adresse;
 	private int numTelephone;
+	private String email;
+	
+	
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 	public String getNom() {
 		return nom;
 	}
@@ -35,6 +44,7 @@ public class Particulier extends Client{
 	@Override
 	public String toString() {
 		return "Particulier [nom=" + nom + ", prenom=" + prenom + ", adresse=" + adresse + ", numTelephone="
-				+ numTelephone + ", toString()=" + super.toString() + "]";
-	}	
+				+ numTelephone + ", email=" + email + "]";
+	}
+	
 }

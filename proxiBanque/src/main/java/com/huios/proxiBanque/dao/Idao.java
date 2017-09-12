@@ -7,8 +7,10 @@ import com.huios.proxiBanque.metier.Client;
 import com.huios.proxiBanque.metier.Compte;
 import com.huios.proxiBanque.metier.Conseiller;
 import com.huios.proxiBanque.metier.Courant;
+import com.huios.proxiBanque.metier.Entreprise;
 import com.huios.proxiBanque.metier.Epargne;
 import com.huios.proxiBanque.metier.Gerant;
+import com.huios.proxiBanque.metier.Particulier;
 
 public interface Idao {
 	
@@ -18,8 +20,11 @@ public interface Idao {
 	public boolean seConnecterAuditeur(String login,String mdp,Auditeur auditeur);
 	
 	
-	public boolean seConnecterConseiller(String login,String mdp,Conseiller conseiller);	
-	public void ajouterClient(Client client);
+	public boolean seConnecterConseiller(String login,String mdp,Conseiller conseiller);
+	public void ajouterParticulier(Particulier particulier);
+	public void ajouterEntreprise(Entreprise entreprise);
+	
+
 	public void ajouterCompte(Compte compte);
 	public void attribuerCompteClient(Client client,Compte compte);
 	public void modifierCompte(Compte compte);

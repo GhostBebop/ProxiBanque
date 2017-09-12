@@ -7,6 +7,14 @@ public class Entreprise extends Client{
 	private String nomEntreprise;
 	private String adresse;
 	private int numTelephone;
+	private String email;
+	
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 	public String getNomEntreprise() {
 		return nomEntreprise;
 	}
@@ -28,6 +36,7 @@ public class Entreprise extends Client{
 	@Override
 	public String toString() {
 		return "Entreprise [nomEntreprise=" + nomEntreprise + ", adresse=" + adresse + ", numTelephone=" + numTelephone
-				+ ", toString()=" + super.toString() + "]";
-	}	
+				+ ", email=" + email + "]";
+	}
+	
 }

@@ -3,7 +3,7 @@ package com.huios.proxiBanque.dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
-import java.sql.SQLException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,8 +12,10 @@ import com.huios.proxiBanque.metier.Client;
 import com.huios.proxiBanque.metier.Compte;
 import com.huios.proxiBanque.metier.Conseiller;
 import com.huios.proxiBanque.metier.Courant;
+import com.huios.proxiBanque.metier.Entreprise;
 import com.huios.proxiBanque.metier.Epargne;
 import com.huios.proxiBanque.metier.Gerant;
+import com.huios.proxiBanque.metier.Particulier;
 import com.mysql.cj.jdbc.PreparedStatement;
 
 
@@ -170,9 +172,53 @@ public class Dao implements Idao{
 	}
 
 	@Override
-	public void ajouterClient(Client client) {
+	public void ajouterParticulier(Particulier particulier) {
 		// TODO Auto-generated method stub
-		
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			String adresse = "jdbc:mysql://localhost:3306/personnebdd";
+			String login = "root";
+			String mdp ="";
+			Connection com = (Connection) DriverManager.getConnection(adresse, login, mdp);
+			String requete = "INSERT INTO clients(nom,prenom,adresse,telephone,typeClient,email) VALUES(?,?,?,?,?,?)";
+			PreparedStatement ps = (PreparedStatement) com.prepareStatement(requete);	
+			ps.setString(1, particulier.getNom());
+			ps.setString(2, particulier.getPrenom());
+			ps.setString(3, particulier.getAdresse());
+			ps.setInt(4, particulier.getNumTelephone());
+			ps.setString(5, particulier.getTypeClient());
+			ps.setString(6, particulier.getEmail());			
+			ps.executeUpdate();
+			ps.close();
+			com.close();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+}
+	@Override
+	public void ajouterEntreprise(Entreprise entreprise) {
+		// TODO Auto-generated method stub
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			String adresse = "jdbc:mysql://localhost:3306/personnebdd";
+			String login = "root";
+			String mdp ="";
+			Connection com = (Connection) DriverManager.getConnection(adresse, login, mdp);
+			String requete = "INSERT INTO clients(nom,adresse,telephone,typeClient,email) VALUES(?,?,?,?,?)";
+			PreparedStatement ps = (PreparedStatement) com.prepareStatement(requete);	
+			ps.setString(1, entreprise.getNomEntreprise());
+			ps.setString(3, entreprise.getAdresse());
+			ps.setInt(4, entreprise.getNumTelephone());
+			ps.setString(5, entreprise.getTypeClient());	
+			ps.setString(6, entreprise.getEmail());	
+			ps.executeUpdate();
+			ps.close();
+			com.close();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Override
@@ -258,6 +304,9 @@ public class Dao implements Idao{
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+
+	
 
 
 

@@ -9,8 +9,10 @@ import com.huios.proxiBanque.metier.Client;
 import com.huios.proxiBanque.metier.Compte;
 import com.huios.proxiBanque.metier.Conseiller;
 import com.huios.proxiBanque.metier.Courant;
+import com.huios.proxiBanque.metier.Entreprise;
 import com.huios.proxiBanque.metier.Epargne;
 import com.huios.proxiBanque.metier.Gerant;
+import com.huios.proxiBanque.metier.Particulier;
 
 public class ServiceImple implements IserviceAuditeur,IserviceConseiller,IserviceGerant{
 	Idao dao = new Dao();
@@ -44,17 +46,7 @@ public class ServiceImple implements IserviceAuditeur,IserviceConseiller,Iservic
 		return dao.seConnecterConseiller(login, mdp,conseiller);
 	}
 
-	@Override
-	public void ajouterClient(Client client) {
-		// TODO Auto-generated method stub
-		dao.ajouterClient(client);
-	}
-
-	@Override
-	public void ajouterCompte(Compte compte) {
-		// TODO Auto-generated method stub
-		dao.ajouterCompte(compte);
-	}
+	
 
 	@Override
 	public void attribuerCompteClient(Client client, Compte compte) {
@@ -128,6 +120,30 @@ public class ServiceImple implements IserviceAuditeur,IserviceConseiller,Iservic
 	public List<Courant> auditAllCompteCourant() {
 		// TODO Auto-generated method stub
 		return dao.auditAllCompteCourant();
+	}
+
+	@Override
+	public void ajouterParticulier(Particulier particulier) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void ajouterEntreprise(Entreprise entreprise) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void ajouterEpargne(Epargne epargne) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void ajouterCourant(Courant courant) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
