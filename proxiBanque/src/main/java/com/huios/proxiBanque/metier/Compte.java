@@ -12,7 +12,29 @@ public abstract class Compte {
 	private int id;
 	protected float solde;
 	private Date dateCreation;
+	private int idClient;
+	private int idCarte;
+	private String typeCompte;
 	
+	
+	public String getTypeCompte() {
+		return typeCompte;
+	}
+	public void setTypeCompte(String typeCompte) {
+		this.typeCompte = typeCompte;
+	}
+	public int getIdCarte() {
+		return idCarte;
+	}
+	public void setIdCarte(int idCarte) {
+		this.idCarte = idCarte;
+	}
+	public int getIdClient() {
+		return idClient;
+	}
+	public void setIdClient(int idClient) {
+		this.idClient = idClient;
+	}
 	public Date getDateCreation() {
 		return dateCreation;
 	}
@@ -52,8 +74,10 @@ public abstract class Compte {
 	@Override
 	public String toString() {
 		return "Compte [client=" + client + ", carte=" + carte + ", code=" + code + ", id=" + id + ", solde=" + solde
-				+ ", dateCreation=" + dateCreation + "]";
+				+ ", dateCreation=" + dateCreation + ", idClient=" + idClient + ", idCarte=" + idCarte + ", typeCompte="
+				+ typeCompte + "]";
 	}
+	
 	
 		
 }
