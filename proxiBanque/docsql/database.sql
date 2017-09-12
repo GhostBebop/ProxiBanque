@@ -48,5 +48,15 @@ tel int(25) not null,
 adresse varchar(255) not null,
 email varchar(255),
 login varchar(32) not null,
-mdp varchar(32) not null
+mdp varchar(32) not null,
+typeEmploye varchar(32)
+)ENGINE=InnoDB;
+
+-- 
+-- Création de la table Carte 
+-- 
+
+create table if not exists carte(
+id int auto_increment primary key,
+typeCarte varchar(32) not null
 )ENGINE=InnoDB;
