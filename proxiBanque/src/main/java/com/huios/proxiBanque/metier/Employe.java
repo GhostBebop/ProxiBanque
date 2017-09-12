@@ -10,10 +10,25 @@ public abstract class Employe {
 	private String adresse;
 	private Agence monAgence;
 	private String email;
-	private int login;
+	private String login;
 	private int mdp;
 	private int id;
+	private int idAgence;
+	private String typeEmploye;
 	
+	
+	public String getTypeEmploye() {
+		return typeEmploye;
+	}
+	public void setTypeEmploye(String typeEmploye) {
+		this.typeEmploye = typeEmploye;
+	}
+	public int getIdAgence() {
+		return idAgence;
+	}
+	public void setIdAgence(int idAgence) {
+		this.idAgence = idAgence;
+	}
 	public int getId() {
 		return id;
 	}
@@ -56,10 +71,10 @@ public abstract class Employe {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public int getLogin() {
+	public String getLogin() {
 		return login;
 	}
-	public void setLogin(int login) {
+	public void setLogin(String login) {
 		this.login = login;
 	}
 	public int getMdp() {
@@ -72,8 +87,9 @@ public abstract class Employe {
 	public String toString() {
 		return "Employe [nom=" + nom + ", prenom=" + prenom + ", numTelephone=" + numTelephone + ", adresse=" + adresse
 				+ ", monAgence=" + monAgence + ", email=" + email + ", login=" + login + ", mdp=" + mdp + ", id=" + id
-				+ "]";
+				+ ", idAgence=" + idAgence + ", typeEmploye=" + typeEmploye + "]";
 	}
+	
 	
 	
 	

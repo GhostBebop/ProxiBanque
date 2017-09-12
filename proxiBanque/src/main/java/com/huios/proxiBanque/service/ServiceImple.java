@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.huios.proxiBanque.dao.Dao;
 import com.huios.proxiBanque.dao.Idao;
+import com.huios.proxiBanque.metier.Auditeur;
 import com.huios.proxiBanque.metier.Client;
 import com.huios.proxiBanque.metier.Compte;
 import com.huios.proxiBanque.metier.Conseiller;
@@ -112,9 +113,9 @@ public class ServiceImple implements IserviceAuditeur,IserviceConseiller,Iservic
 	
 
 	@Override
-	public boolean seConnecterAuditeur(String login, String mdp) {
+	public boolean seConnecterAuditeur(String login, String mdp,Auditeur auditeur) {
 		// TODO Auto-generated method stub
-		return dao.seConnecterAuditeur(login, mdp);
+		return dao.seConnecterAuditeur(login, mdp, auditeur);
 	}
 
 	@Override

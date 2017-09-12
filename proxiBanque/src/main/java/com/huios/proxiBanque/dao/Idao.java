@@ -2,6 +2,7 @@ package com.huios.proxiBanque.dao;
 
 import java.util.List;
 
+import com.huios.proxiBanque.metier.Auditeur;
 import com.huios.proxiBanque.metier.Client;
 import com.huios.proxiBanque.metier.Compte;
 import com.huios.proxiBanque.metier.Conseiller;
@@ -14,7 +15,7 @@ public interface Idao {
 	
 	public List<Epargne> auditAllCompteEpargne();
 	public List<Courant> auditAllCompteCaurant();
-	public boolean seConnecterAuditeur(String login,String mdp);
+	public boolean seConnecterAuditeur(String login,String mdp,Auditeur auditeur);
 	
 	
 	
