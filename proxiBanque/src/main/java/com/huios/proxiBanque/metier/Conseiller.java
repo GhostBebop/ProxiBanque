@@ -9,6 +9,16 @@ import java.util.List;
 public class Conseiller extends Employe{
 	private List<Client> mesClients = new ArrayList<Client>();
 	private Gerant monGerant;
+	private int idGerant;
+	
+	
+	public int getIdGerant() {
+		return idGerant;
+	}
+	
+	public void setIdGerant(int idGerant) {
+		this.idGerant = idGerant;
+	}
 
 	public List<Client> getMesClients() {
 		return mesClients;
@@ -25,11 +35,11 @@ public class Conseiller extends Employe{
 	public void setMonGerant(Gerant monGerant) {
 		this.monGerant = monGerant;
 	}
-
 	@Override
 	public String toString() {
-		return "Conseiller [monGerant=" + monGerant + ", toString()=" + super.toString() + "]";
+		return "Conseiller [monGerant=" + monGerant + ", idGerant=" + idGerant + "]";
 	}
+
 	public void ajouterClient(Client c) {
 		mesClients.add(c);
 		

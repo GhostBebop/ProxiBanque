@@ -126,15 +126,48 @@ public class Dao implements Idao{
 			e.printStackTrace();
 		} 
 		return connect;
-		// TODO Auto-generated method stub		
 	}
 
 	
 	
 	@Override
-	public void seConnecter(String login, String mdp) {
+	public boolean seConnecterConseiller(String login, String mdp,Conseiller conseiller) {
 		// TODO Auto-generated method stub
-		
+		boolean connect = false;
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			String adresse = "jdbc:mysql://localhost:3306/personnebdd";
+			String loginMysql = "root";
+			String mdpMysql ="";
+			Connection com = (Connection) DriverManager.getConnection(adresse, loginMysql, mdpMysql);
+			String requete = "SELECT * FROM Employe where typeEmploye = conseiller and login = ? and mdp = ?"; 
+			PreparedStatement ps = (PreparedStatement) com.prepareStatement(requete);	
+			ps.setString(1, login);
+			ps.setString(2, mdp);
+			ps.executeUpdate();
+			ResultSet rs = (ResultSet) ps.executeQuery();
+			if (rs.next()) {
+				connect = true;
+				conseiller.setAdresse(rs.getString("adresse"));
+				conseiller.setEmail(rs.getString("email"));
+				conseiller.setNumTelephone(rs.getInt("numTel"));
+				conseiller.setLogin(rs.getString("login"));
+				conseiller.setMdp(rs.getString("mdp"));			
+				conseiller.setIdAgence(rs.getInt("idAgence"));		
+				conseiller.setPrenom(rs.getString("Prenom"));
+				conseiller.setNom(rs.getString("nom"));
+				conseiller.setId(rs.getInt("id"));
+				conseiller.setIdAgence(rs.getInt("idAgence"));
+				conseiller.setTypeEmploye(rs.getString("typeEmploye"));
+			}
+			else {
+				connect = false;
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		return connect;			
 	}
 
 	@Override

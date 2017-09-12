@@ -39,9 +39,9 @@ public class ServiceImple implements IserviceAuditeur,IserviceConseiller,Iservic
 	}
 
 	@Override
-	public void seConnecter(String login, String mdp) {
+	public boolean seConnecterConseiller(String login, String mdp,Conseiller conseiller) {
 		// TODO Auto-generated method stub
-		dao.seConnecter(login, mdp);
+		return dao.seConnecterConseiller(login, mdp,conseiller);
 	}
 
 	@Override

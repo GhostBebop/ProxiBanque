@@ -7,7 +7,7 @@ import com.huios.proxiBanque.metier.Compte;
 import com.huios.proxiBanque.metier.Conseiller;
 
 public interface IserviceConseiller {
-	public void seConnecter(String login,String mdp);
+	public boolean seConnecterConseiller(String login,String mdp,Conseiller conseiller);
 	
 	public void ajouterClient(Client client);
 	public void ajouterCompte(Compte compte);

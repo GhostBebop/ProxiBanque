@@ -18,16 +18,10 @@ public interface Idao {
 	public boolean seConnecterAuditeur(String login,String mdp,Auditeur auditeur);
 	
 	
-	
-	
-	
-	public void seConnecter(String login,String mdp);
-	
+	public boolean seConnecterConseiller(String login,String mdp,Conseiller conseiller);	
 	public void ajouterClient(Client client);
 	public void ajouterCompte(Compte compte);
-	
 	public void attribuerCompteClient(Client client,Compte compte);
-	
 	public void modifierCompte(Compte compte);
 	public void supprimerCompte(Compte compte);
 	public void supprimerClient(Client client);
