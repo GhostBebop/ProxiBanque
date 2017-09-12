@@ -5,12 +5,21 @@ import java.util.List;
 import com.huios.proxiBanque.metier.Client;
 import com.huios.proxiBanque.metier.Compte;
 import com.huios.proxiBanque.metier.Conseiller;
+import com.huios.proxiBanque.metier.Courant;
+import com.huios.proxiBanque.metier.Epargne;
 import com.huios.proxiBanque.metier.Gerant;
 
 public interface Idao {
 	
-	public List<Compte> auditAllCompte();
-	public void seConnecterAuditeur(String login,String mdp);
+	
+	public List<Epargne> auditAllCompteEpargne();
+	public List<Courant> auditAllCompteCaurant();
+	public boolean seConnecterAuditeur(String login,String mdp);
+	
+	
+	
+	
+	
 	public void seConnecter(String login,String mdp);
 	
 	public void ajouterClient(Client client);
@@ -32,5 +41,4 @@ public interface Idao {
 	public void	supprimerConseiller(Conseiller conseiller);
 	public void ajouterConseiller(Conseiller conseiller);
 	public List<Conseiller> FindAllConseiller(Gerant gerant);
-	
 }

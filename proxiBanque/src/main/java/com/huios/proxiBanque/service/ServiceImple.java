@@ -7,6 +7,8 @@ import com.huios.proxiBanque.dao.Idao;
 import com.huios.proxiBanque.metier.Client;
 import com.huios.proxiBanque.metier.Compte;
 import com.huios.proxiBanque.metier.Conseiller;
+import com.huios.proxiBanque.metier.Courant;
+import com.huios.proxiBanque.metier.Epargne;
 import com.huios.proxiBanque.metier.Gerant;
 
 public class ServiceImple implements IserviceAuditeur,IserviceConseiller,IserviceGerant{
@@ -107,16 +109,24 @@ public class ServiceImple implements IserviceAuditeur,IserviceConseiller,Iservic
 		dao.patrimoineCompte(client);
 	}
 
+	
+
 	@Override
-	public List<Compte> auditAllCompte() {
+	public boolean seConnecterAuditeur(String login, String mdp) {
 		// TODO Auto-generated method stub
-		return dao.auditAllCompte();
+		return dao.seConnecterAuditeur(login, mdp);
 	}
 
 	@Override
-	public void seConnecterAuditeur(String login, String mdp) {
+	public List<Epargne> auditAllCompteEpargne() {
 		// TODO Auto-generated method stub
-		dao.seConnecterAuditeur(login, mdp);
+		return dao.auditAllCompteEpargne();
+	}
+
+	@Override
+	public List<Courant> auditAllCompteCaurant() {
+		// TODO Auto-generated method stub
+		return dao.auditAllCompteCaurant();
 	}
 
 }
