@@ -150,14 +150,13 @@ public class Dao implements Idao{
 				connect = true;
 				conseiller.setAdresse(rs.getString("adresse"));
 				conseiller.setEmail(rs.getString("email"));
-				conseiller.setNumTelephone(rs.getInt("numTel"));
+				conseiller.setNumTelephone(rs.getInt("tel"));
 				conseiller.setLogin(rs.getString("login"));
 				conseiller.setMdp(rs.getString("mdp"));			
 				conseiller.setIdAgence(rs.getInt("idAgence"));		
 				conseiller.setPrenom(rs.getString("Prenom"));
 				conseiller.setNom(rs.getString("nom"));
 				conseiller.setId(rs.getInt("id"));
-				conseiller.setIdAgence(rs.getInt("idAgence"));
 				conseiller.setTypeEmploye(rs.getString("typeEmploye"));
 			}
 			else {
