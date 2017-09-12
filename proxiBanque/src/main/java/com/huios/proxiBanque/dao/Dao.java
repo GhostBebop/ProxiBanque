@@ -56,7 +56,7 @@ public class Dao implements Idao{
 	
 	
 	@Override
-	public List<Courant> auditAllCompteCaurant() {
+	public List<Courant> auditAllCompteCourant() {
 		// TODO Auto-generated method stub
 		List<Courant> courants = new ArrayList<Courant>();
 		try {			
@@ -110,7 +110,7 @@ public class Dao implements Idao{
 				auditeur.setEmail(rs.getString("email"));
 				auditeur.setNumTelephone(rs.getInt("numTel"));
 				auditeur.setLogin(rs.getString("login"));
-				auditeur.setMdp(rs.getInt("mdp"));			
+				auditeur.setMdp(rs.getString("mdp"));			
 				auditeur.setIdAgence(rs.getInt("idAgence"));		
 				auditeur.setPrenom(rs.getString("Prenom"));
 				auditeur.setNom(rs.getString("nom"));
@@ -129,6 +129,8 @@ public class Dao implements Idao{
 		// TODO Auto-generated method stub		
 	}
 
+	
+	
 	@Override
 	public void seConnecter(String login, String mdp) {
 		// TODO Auto-generated method stub

@@ -14,7 +14,7 @@ public interface Idao {
 	
 	
 	public List<Epargne> auditAllCompteEpargne();
-	public List<Courant> auditAllCompteCaurant();
+	public List<Courant> auditAllCompteCourant();
 	public boolean seConnecterAuditeur(String login,String mdp,Auditeur auditeur);
 	
 	

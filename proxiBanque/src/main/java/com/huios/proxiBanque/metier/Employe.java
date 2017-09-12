@@ -11,7 +11,7 @@ public abstract class Employe {
 	private Agence monAgence;
 	private String email;
 	private String login;
-	private int mdp;
+	private String mdp;
 	private int id;
 	private int idAgence;
 	private String typeEmploye;
@@ -77,10 +77,11 @@ public abstract class Employe {
 	public void setLogin(String login) {
 		this.login = login;
 	}
-	public int getMdp() {
+	
+	public String getMdp() {
 		return mdp;
 	}
-	public void setMdp(int mdp) {
+	public void setMdp(String mdp) {
 		this.mdp = mdp;
 	}
 	@Override
@@ -89,6 +90,7 @@ public abstract class Employe {
 				+ ", monAgence=" + monAgence + ", email=" + email + ", login=" + login + ", mdp=" + mdp + ", id=" + id
 				+ ", idAgence=" + idAgence + ", typeEmploye=" + typeEmploye + "]";
 	}
+	
 	
 	
 	

@@ -125,9 +125,9 @@ public class ServiceImple implements IserviceAuditeur,IserviceConseiller,Iservic
 	}
 
 	@Override
-	public List<Courant> auditAllCompteCaurant() {
+	public List<Courant> auditAllCompteCourant() {
 		// TODO Auto-generated method stub
-		return dao.auditAllCompteCaurant();
+		return dao.auditAllCompteCourant();
 	}
 
 }
