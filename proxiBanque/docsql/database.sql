@@ -60,3 +60,44 @@ create table if not exists carte(
 id int auto_increment primary key,
 typeCarte varchar(32) not null
 )ENGINE=InnoDB;
+
+
+-- 
+-- Ajouter une contrainte AGENCE EMPLOYES
+-- 
+
+alter table employes
+add idAgence int null;
+
+alter table employes
+add constraint fk_agence_employe foreign key (idAgence) references employes(id);
+
+-- 
+-- Ajouter une ocntrainte Gérant/Conseiller
+-- 
+
+alter table employes
+add idGerant int null
+
+alter table employes
+add constraint fk_conseiller_gerant foreign key (idGerant) references employes(id);
+
+-- 
+-- Ajouter une contrainte Conseiller Client
+-- 
+
+alter table clients
+add idConseiller int not null;
+
+alter table clients
+add constraint fk_conseiller_client foreign key (idConseiller) references employes(id);
+
+-- 
+-- Ajouter uen contrainte Client Compte
+-- 
+
+alter table comptes
+add idClient int not null;
+
+alter table comptes
+add constraint fk_client_compte foreign key (idClient) references comptes(id);
