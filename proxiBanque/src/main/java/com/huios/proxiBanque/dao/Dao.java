@@ -1,5 +1,7 @@
 package com.huios.proxiBanque.dao;
 
+import java.util.List;
+
 import com.huios.proxiBanque.metier.Client;
 import com.huios.proxiBanque.metier.Compte;
 import com.huios.proxiBanque.metier.Conseiller;
@@ -8,9 +10,9 @@ import com.huios.proxiBanque.metier.Gerant;
 public class Dao implements Idao{
 
 	@Override
-	public void auditAllCompte() {
+	public List<Compte> auditAllCompte() {
 		// TODO Auto-generated method stub
-		
+		return null;
 	}
 
 	@Override
@@ -62,15 +64,15 @@ public class Dao implements Idao{
 	}
 
 	@Override
-	public void FindAllClient(Conseiller conseiller) {
+	public List<Client> FindAllClient(Conseiller conseiller) {
 		// TODO Auto-generated method stub
-		
+		return null;
 	}
 
 	@Override
-	public void FindAllCompte(Client client) {
+	public List<Compte> FindAllCompte(Client client) {
 		// TODO Auto-generated method stub
-		
+		return null;
 	}
 
 	@Override
@@ -110,10 +112,12 @@ public class Dao implements Idao{
 	}
 
 	@Override
-	public void FindAllConseiller(Gerant gerant) {
+	public List<Conseiller> FindAllConseiller(Gerant gerant) {
 		// TODO Auto-generated method stub
-		
+		return null;
 	}
+
+	
 
 	
 

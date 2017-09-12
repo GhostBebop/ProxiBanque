@@ -1,5 +1,7 @@
 package com.huios.proxiBanque.service;
 
+import java.util.List;
+
 import com.huios.proxiBanque.dao.Dao;
 import com.huios.proxiBanque.dao.Idao;
 import com.huios.proxiBanque.metier.Client;
@@ -28,9 +30,9 @@ public class ServiceImple implements IserviceAuditeur,IserviceConseiller,Iservic
 	}
 
 	@Override
-	public void FindAllConseiller(Gerant gerant) {
+	public List<Conseiller> FindAllConseiller(Gerant gerant) {
 		// TODO Auto-generated method stub
-		dao.FindAllConseiller(gerant);
+		return dao.FindAllConseiller(gerant);
 	}
 
 	@Override
@@ -76,15 +78,15 @@ public class ServiceImple implements IserviceAuditeur,IserviceConseiller,Iservic
 	}
 
 	@Override
-	public void FindAllClient(Conseiller conseiller) {
+	public List<Client> FindAllClient(Conseiller conseiller) {
 		// TODO Auto-generated method stub
-		dao.FindAllClient(conseiller);
+		return dao.FindAllClient(conseiller);
 	}
 
 	@Override
-	public void FindAllCompte(Client client) {
+	public List<Compte> FindAllCompte(Client client) {
 		// TODO Auto-generated method stub
-		dao.FindAllCompte(client);
+		return dao.FindAllCompte(client);
 	}
 
 	@Override
@@ -106,9 +108,9 @@ public class ServiceImple implements IserviceAuditeur,IserviceConseiller,Iservic
 	}
 
 	@Override
-	public void auditAllCompte() {
+	public List<Compte> auditAllCompte() {
 		// TODO Auto-generated method stub
-		dao.auditAllCompte();
+		return dao.auditAllCompte();
 	}
 
 	@Override

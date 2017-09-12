@@ -1,5 +1,7 @@
 package com.huios.proxiBanque.service;
 
+import java.util.List;
+
 import com.huios.proxiBanque.metier.Client;
 import com.huios.proxiBanque.metier.Compte;
 import com.huios.proxiBanque.metier.Conseiller;
@@ -16,8 +18,8 @@ public interface IserviceConseiller {
 	public void supprimerCompte(Compte compte);
 	public void supprimerClient(Client client);
 	
-	public void FindAllClient(Conseiller conseiller);
-	public void FindAllCompte(Client client);	
+	public List<Client> FindAllClient(Conseiller conseiller);
+	public List<Compte> FindAllCompte(Client client);	
 	public void virementCompte(Compte compte1,Compte compte2);
 	
 	public void simulationCompte(Compte compte);
