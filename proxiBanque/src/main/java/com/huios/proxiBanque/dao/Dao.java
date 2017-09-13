@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 import com.huios.proxiBanque.metier.Auditeur;
+import com.huios.proxiBanque.metier.Carte;
 import com.huios.proxiBanque.metier.Client;
 import com.huios.proxiBanque.metier.Compte;
 import com.huios.proxiBanque.metier.Conseiller;
@@ -14,27 +15,31 @@ import com.huios.proxiBanque.metier.Entreprise;
 import com.huios.proxiBanque.metier.Epargne;
 import com.huios.proxiBanque.metier.Gerant;
 import com.huios.proxiBanque.metier.Particulier;
-import com.mysql.cj.jdbc.PreparedStatement;
+import com.mysql.jdbc.PreparedStatement;
+
 public class Dao implements Idao{
 	// method auditor
 	@Override
 	public List<Epargne> auditAllCompteEpargne() {
 		// TODO Auto-generated method stub
 		List<Epargne> epargnes = new ArrayList<Epargne>();
+		Carte carte = new Carte();
 		try {			
 			Class.forName("com.mysql.jdbc.Driver");
 			String adresse = "jdbc:mysql://localhost:3306/personnebdd";
 			String login = "root";
 			String mdp ="";
 			Connection com = (Connection) DriverManager.getConnection(adresse, login, mdp);
-			String requete = "SELECT * FROM comptes where typeCompte = epargne";
+			String requete = "SELECT * FROM comptes,cartes where typeCompte like epargne and carte.idCompte=comptes.id";
 			PreparedStatement ps = (PreparedStatement) com.prepareStatement(requete);
 			ResultSet rs = (ResultSet) ps.executeQuery();	
 			while (rs.next()) {
 				Epargne e = new Epargne();		
 				e.setId(rs.getInt("id"));
 				e.setIdClient(rs.getInt("idClient"));
-				e.setIdCarte(rs.getInt("idCarte"));		
+				carte.setTypeCarte(rs.getString("typeCarte"));
+				carte.setIdCompte(rs.getInt("idCompte"));
+				e.setCarte(carte);
 				e.setDateCreation(rs.getDate("dateCreation"));
 				e.setCode(rs.getInt("code"));
 				e.setSolde(rs.getFloat("solde"));
@@ -54,27 +59,30 @@ public class Dao implements Idao{
 	public List<Courant> auditAllCompteCourant() {
 		// TODO Auto-generated method stub
 		List<Courant> courants = new ArrayList<Courant>();
+		Carte carte = new Carte();
 		try {			
 			Class.forName("com.mysql.jdbc.Driver");
 			String adresse = "jdbc:mysql://localhost:3306/personnebdd";
 			String login = "root";
 			String mdp ="";
 			Connection com = (Connection) DriverManager.getConnection(adresse, login, mdp);
-			String requete = "SELECT * FROM comptes where typeCompte = courant";
+			String requete = "SELECT * FROM comptes,cartes where typeCompte like courant and carte.idCompte=comptes.id";
 			PreparedStatement ps = (PreparedStatement) com.prepareStatement(requete);
 			ResultSet rs = (ResultSet) ps.executeQuery();	
 			while (rs.next()) {
 				Courant c = new Courant();		
 				c.setId(rs.getInt("id"));
-				c.setIdClient(rs.getInt("idClient"));
-				c.setIdCarte(rs.getInt("idCarte"));		
+				c.setIdClient(rs.getInt("idClient"));	
 				c.setDateCreation(rs.getDate("dateCreation"));
+				carte.setTypeCarte(rs.getString("typeCarte"));
+				carte.setIdCompte(rs.getInt("idCompte"));
+				c.setCarte(carte);
 				c.setCode(rs.getInt("code"));
 				c.setSolde(rs.getFloat("solde"));
 				c.setDecouvert(rs.getFloat("decouvert"));
 				c.setTypeCompte(rs.getString("typeCompte"));
 				courants.add(c);
-				}								
+			}								
 			ps.close();
 			com.close();
 		} catch (Exception e) {
@@ -495,13 +503,14 @@ public class Dao implements Idao{
 		// TODO Auto-generated method stub
 		// TODO Auto-generated method stub
 				List<Epargne> epargnes = new ArrayList<Epargne>();
+				Carte carte = new Carte();
 				try {			
 					Class.forName("com.mysql.jdbc.Driver");
 					String adresse = "jdbc:mysql://localhost:3306/personnebdd";
 					String login = "root";
 					String mdp ="";
 					Connection com = (Connection) DriverManager.getConnection(adresse, login, mdp);
-					String requete = "SELECT * FROM comptes where typeCompte = epargne and clientId = ?";
+					String requete = "SELECT * FROM comptes,cartes where typeCompte like epargne and  idClient = ? and carte.idCompte=comptes.id";		
 					PreparedStatement ps = (PreparedStatement) com.prepareStatement(requete);
 					ps.setInt(1, client.getId());
 					ps.executeUpdate();
@@ -510,7 +519,9 @@ public class Dao implements Idao{
 						Epargne e = new Epargne();		
 						e.setId(rs.getInt("id"));
 						e.setIdClient(rs.getInt("idClient"));
-						e.setIdCarte(rs.getInt("idCarte"));		
+						carte.setTypeCarte(rs.getString("typeCarte"));
+						carte.setIdCompte(rs.getInt("idCompte"));
+						e.setCarte(carte);
 						e.setDateCreation(rs.getDate("dateCreation"));
 						e.setCode(rs.getInt("code"));
 						e.setSolde(rs.getFloat("solde"));
@@ -545,7 +556,6 @@ public class Dao implements Idao{
 				Courant c = new Courant();		
 				c.setId(rs.getInt("id"));
 				c.setIdClient(rs.getInt("idClient"));
-				c.setIdCarte(rs.getInt("idCarte"));		
 				c.setDateCreation(rs.getDate("dateCreation"));
 				c.setCode(rs.getInt("code"));
 				c.setSolde(rs.getFloat("solde"));

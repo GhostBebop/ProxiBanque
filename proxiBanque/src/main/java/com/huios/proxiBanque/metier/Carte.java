@@ -6,7 +6,15 @@ package com.huios.proxiBanque.metier;
 public class Carte {
 	private String typeCarte;
 	private Compte compte;
+	private int idCompte;
 	
+	
+	public int getIdCompte() {
+		return idCompte;
+	}
+	public void setIdCompte(int idCompte) {
+		this.idCompte = idCompte;
+	}
 	public String getTypeCarte() {
 		return typeCarte;
 	}
@@ -21,8 +29,7 @@ public class Carte {
 	}
 	@Override
 	public String toString() {
-		return "Carte [typeCarte=" + typeCarte + ", compte=" + compte + "]";
+		return "Carte [typeCarte=" + typeCarte + ", compte=" + compte + ", idCompte=" + idCompte + "]";
 	}
-	
 }
 	
