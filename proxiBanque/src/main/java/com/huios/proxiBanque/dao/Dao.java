@@ -172,7 +172,7 @@ public class Dao implements Idao{
 			String login = "root";
 			String mdp ="";
 			Connection com = (Connection) DriverManager.getConnection(adresse, login, mdp);
-			String requete = "INSERT INTO clients(nom,prenom,adresse,telephone,typeClient,idConseiller) VALUES(?,?,?,?,?)";
+			String requete = "INSERT INTO clients(nom,prenom,adresse,telephone,typeClient) VALUES(?,?,?,?,?)";
 			PreparedStatement ps = (PreparedStatement) com.prepareStatement(requete);	
 			ps.setString(1, particulier.getNom());
 			ps.setString(2, particulier.getPrenom());
@@ -196,13 +196,12 @@ public class Dao implements Idao{
 			String login = "root";
 			String mdp ="";
 			Connection com = (Connection) DriverManager.getConnection(adresse, login, mdp);
-			String requete = "INSERT INTO clients(nom,adresse,telephone,typeClient,email) VALUES(?,?,?,?,?)";
+			String requete = "INSERT INTO clients(nom,adresse,telephone,typeClient) VALUES(?,?,?,?,?)";
 			PreparedStatement ps = (PreparedStatement) com.prepareStatement(requete);	
 			ps.setString(1, entreprise.getNomEntreprise());
 			ps.setString(2, entreprise.getAdresse());
 			ps.setInt(3, entreprise.getNumTelephone());
 			ps.setString(4, entreprise.getTypeClient());	
-			ps.setString(5, entreprise.getEmail());	
 			ps.executeUpdate();
 			ps.close();
 			com.close();

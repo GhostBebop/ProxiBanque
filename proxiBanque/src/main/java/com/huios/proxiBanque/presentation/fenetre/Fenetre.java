@@ -296,6 +296,7 @@ public class Fenetre extends JFrame{
 				p.setPrenom(text2.getText());
 				p.setAdresse(text3.getText());
 				p.setNumTelephone(Integer.parseInt(text4.getText()));
+				p.setTypeClient("particulier");
 				IserviceConseiller is = new ServiceImple();
 				is.ajouterParticulier(p);				 
 				text1.setText("");

@@ -15,6 +15,7 @@ import com.huios.proxiBanque.metier.Client;
 import com.huios.proxiBanque.metier.Conseiller;
 import com.huios.proxiBanque.metier.Courant;
 import com.huios.proxiBanque.metier.Entreprise;
+import com.huios.proxiBanque.metier.Epargne;
 import com.huios.proxiBanque.metier.Gerant;
 import com.huios.proxiBanque.metier.Particulier;
 import com.mysql.jdbc.PreparedStatement;
@@ -134,15 +135,49 @@ public class TestConseiller {
 		dao.ajouterEntreprise(e);
 		
 	}
+	@Ignore
 	@Test
-	public void testAjouterCompte() {
+	public void testAjouterCompteCourant() {
 		Courant c = new Courant();
 		c.setCode(1608);//code
-		c.setSolde((float)1500.20);//solde
+		c.setSolde((float)1500);//solde
 		c.setDateCreation("17/02/17");//dateCreation
-	//idClient
 		c.setTypeCompte("courant");//typeCompte
+		c.setDecouvert(-200);
 		dao.ajouterCompteCourant(c);
 	}
+	@Ignore
+	@Test
+	public void testAjouterCompteEpargne() {
+		Epargne e = new Epargne();
+		e.setCode(1608);//code
+		e.setSolde((float)1500);//solde
+		e.setDateCreation("23/02/17");//dateCreation
+		e.setTypeCompte("epargne");//typeCompte
+		e.setTaux(5.2);
+		dao.ajouterCompteEpargne(e);
+	}
+	
+	@Test 
+	public void testVirement() {
+		Epargne e = new Epargne();
+		e.setId(4);
+		e.setCode(1608);//code
+		e.setSolde((float)1500);//solde
+		e.setDateCreation("23/02/17");//dateCreation
+		e.setTypeCompte("epargne");//typeCompte
+		e.setTaux(5.2);
+		Courant c = new Courant();
+		c.setCode(1608);//code
+		c.setSolde((float)1500);//solde
+		c.setDateCreation("17/02/17");//dateCreation
+		c.setTypeCompte("courant");//typeCompte
+		c.setDecouvert(-200);
+		c.setId(5);
+		dao.ajouterCompteCourant(c);
+		
+		dao.virementCompte(e, c, 100);
+		
+	} //======================================ECHEC =================================================
 
 }
