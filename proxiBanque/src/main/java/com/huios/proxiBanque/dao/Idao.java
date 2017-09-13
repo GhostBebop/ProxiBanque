@@ -2,6 +2,7 @@ package com.huios.proxiBanque.dao;
 import java.util.List;
 import com.huios.proxiBanque.metier.Auditeur;
 import com.huios.proxiBanque.metier.Client;
+import com.huios.proxiBanque.metier.Compte;
 import com.huios.proxiBanque.metier.Conseiller;
 import com.huios.proxiBanque.metier.Courant;
 import com.huios.proxiBanque.metier.Entreprise;
@@ -30,7 +31,7 @@ public interface Idao {
 	public List<Entreprise> FindAllEntreprise(Conseiller conseiller);
 	public List<Epargne> FindAllCompteEpargne(Client client);
 	public List<Courant> FindAllCompteCourant(Client client);	
-	public void virementCompte(int id1, int id2, double res1,double res2);	
+	public void virementCompte(Compte compte1, Compte compte2, double montant);	
 	public void simulationCompte(Client client);
 	public void patrimoineCompte(Client client);	
 	// method manager

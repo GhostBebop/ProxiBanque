@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import com.huios.proxiBanque.metier.Auditeur;
 import com.huios.proxiBanque.metier.Client;
+import com.huios.proxiBanque.metier.Compte;
 import com.huios.proxiBanque.metier.Conseiller;
 import com.huios.proxiBanque.metier.Courant;
 import com.huios.proxiBanque.metier.Entreprise;
@@ -561,7 +562,7 @@ public class Dao implements Idao{
 		return courants;
 	}
 	@Override
-	public void virementCompte(int id1, int id2,double res1,double res2) {
+	public void virementCompte(Compte compte1,Compte compte2,double montant) {
 		// TODO Auto-generated method stub
 		try {
 		
@@ -570,12 +571,12 @@ public class Dao implements Idao{
 			String login = "root";
 			String mdp ="";
 			Connection com = (Connection) DriverManager.getConnection(adresse, login, mdp);
-			String requete = "UPDATE comptes set solde = ? Where id = ?;comptes set solde = ? where id = ?;";
+			String requete = "UPDATE comptes set solde = ? Where id = ?; UPDATE comptes set solde = ? where id = ?;";
 			PreparedStatement ps = (PreparedStatement) com.prepareStatement(requete);
-			ps.setDouble(1,res1);	
-			ps.setInt(2,id1);
-			ps.setDouble(3,res2);	
-			ps.setInt(4,id2);
+			ps.setDouble(1,compte1.getSolde()-montant);	
+			ps.setInt(2,compte1.getId());
+			ps.setDouble(3,compte2.getSolde()+montant);	
+			ps.setInt(4,compte2.getId());
 			ps.executeUpdate();				
 			ps.close();
 			com.close();

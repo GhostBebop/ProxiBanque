@@ -5,7 +5,7 @@ package com.huios.proxiBanque.metier;
 
 import java.util.Date;
 
-public abstract class Compte {
+public class Compte {
 	private Client client;
 	private Carte carte;
 	private int code;
