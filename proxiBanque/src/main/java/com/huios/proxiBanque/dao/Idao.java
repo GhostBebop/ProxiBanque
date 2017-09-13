@@ -13,17 +13,16 @@ public interface Idao {
 	// method auditor
 	public List<Epargne> auditAllCompteEpargne();
 	public List<Courant> auditAllCompteCourant();
-	public boolean seConnecterAuditeur(String login,String mdp,Auditeur auditeur);
+	public boolean seConnecterAuditeur(String login, String mdp, Auditeur auditeur);
 	// method advisor
-	public boolean seConnecterConseiller(String login,String mdp,Conseiller conseiller);
+	public boolean seConnecterConseiller(String login, String mdp, Conseiller conseiller);
 	public void ajouterParticulier(Particulier particulier);
 	public void ajouterEntreprise(Entreprise entreprise);
 	public void ajouterCompteEpargne(Epargne epargne);
 	public void ajouterCompteCourant(Courant courant);
 	//public Entreprise findEntreprise();
 	//public Particulier findParticulier();
-	public void attribuerCompteEpargne(Client client,Epargne epargne);
-	public void attribuerCompteCourant(Client client,Courant courant);
+	public void attribuerCompte(Client client,Compte compte);
 	public void modifierCompteEpargne(Epargne epargne,int typeModif);
 	public void modifierCompteCourant(Courant courant,int typeModif);	
 	public void supprimerCompteEpargne(Epargne epargne);
