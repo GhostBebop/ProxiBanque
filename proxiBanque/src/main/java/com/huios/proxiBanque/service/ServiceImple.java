@@ -16,7 +16,7 @@ public class ServiceImple implements IserviceAuditeur,IserviceConseiller,Iservic
 	@Override
 	public void modifierConseiller(Conseiller conseiller) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override

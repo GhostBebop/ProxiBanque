@@ -23,27 +23,23 @@ public class Dao implements Idao{
 	public List<Epargne> auditAllCompteEpargne() {
 		// TODO Auto-generated method stub
 		List<Epargne> epargnes = new ArrayList<Epargne>();
-		Carte carte = new Carte();
 		try {			
 			Class.forName("com.mysql.jdbc.Driver");
 			String adresse = "jdbc:mysql://localhost:3306/personnebdd";
 			String login = "root";
 			String mdp ="";
 			Connection com = (Connection) DriverManager.getConnection(adresse, login, mdp);
-			String requete = "SELECT * FROM comptes,cartes where typeCompte like epargne and carte.idCompte=comptes.id";
+			String requete = "SELECT * FROM comptes where typeCompte like epargne";
 			PreparedStatement ps = (PreparedStatement) com.prepareStatement(requete);
 			ResultSet rs = (ResultSet) ps.executeQuery();	
 			while (rs.next()) {
 				Epargne e = new Epargne();		
 				e.setId(rs.getInt("id"));
 				e.setIdClient(rs.getInt("idClient"));
-				carte.setTypeCarte(rs.getString("typeCarte"));
-				carte.setIdCompte(rs.getInt("idCompte"));
-				e.setCarte(carte);
 				e.setDateCreation(rs.getDate("dateCreation"));
 				e.setCode(rs.getInt("code"));
 				e.setSolde(rs.getFloat("solde"));
-				e.setTaux(rs.getFloat("Taux"));
+				e.setTaux(rs.getFloat("taux"));
 				e.setTypeCompte(rs.getString("typeCompte"));
 				epargnes.add(e);
 				}								
@@ -100,7 +96,7 @@ public class Dao implements Idao{
 			String loginMysql = "root";
 			String mdpMysql ="";
 			Connection com = (Connection) DriverManager.getConnection(adresse, loginMysql, mdpMysql);
-			String requete = "SELECT * FROM Employe where typeEmploye = auditeur and login = ? and mdp = ?"; 
+			String requete = "SELECT * FROM Employe where typeEmploye like auditeur and login = ? and mdp = ?"; 
 			PreparedStatement ps = (PreparedStatement) com.prepareStatement(requete);	
 			ps.setString(1, login);
 			ps.setString(2, mdp);
@@ -110,14 +106,13 @@ public class Dao implements Idao{
 				connect = true;
 				auditeur.setAdresse(rs.getString("adresse"));
 				auditeur.setEmail(rs.getString("email"));
-				auditeur.setNumTelephone(rs.getInt("numTel"));
+				auditeur.setNumTelephone(rs.getInt("tel"));
 				auditeur.setLogin(rs.getString("login"));
 				auditeur.setMdp(rs.getString("mdp"));			
 				auditeur.setIdAgence(rs.getInt("idAgence"));		
 				auditeur.setPrenom(rs.getString("Prenom"));
 				auditeur.setNom(rs.getString("nom"));
 				auditeur.setId(rs.getInt("id"));
-				auditeur.setIdAgence(rs.getInt("idAgence"));
 				auditeur.setTypeEmploye(rs.getString("typeEmploye"));
 			}
 			else {
@@ -140,7 +135,7 @@ public class Dao implements Idao{
 			String loginMysql = "root";
 			String mdpMysql ="";
 			Connection com = (Connection) DriverManager.getConnection(adresse, loginMysql, mdpMysql);
-			String requete = "SELECT * FROM employes where typeEmploye = conseiller and login = ? and mdp = ?"; 
+			String requete = "SELECT * FROM employes where typeEmploye like conseiller and login = ? and mdp = ?"; 
 			PreparedStatement ps = (PreparedStatement) com.prepareStatement(requete);	
 			ps.setString(1, login);
 			ps.setString(2, mdp);
@@ -177,14 +172,13 @@ public class Dao implements Idao{
 			String login = "root";
 			String mdp ="";
 			Connection com = (Connection) DriverManager.getConnection(adresse, login, mdp);
-			String requete = "INSERT INTO clients(nom,prenom,adresse,telephone,typeClient,email) VALUES(?,?,?,?,?,?)";
+			String requete = "INSERT INTO clients(nom,prenom,adresse,telephone,typeClient) VALUES(?,?,?,?,?)";
 			PreparedStatement ps = (PreparedStatement) com.prepareStatement(requete);	
 			ps.setString(1, particulier.getNom());
 			ps.setString(2, particulier.getPrenom());
 			ps.setString(3, particulier.getAdresse());
 			ps.setInt(4, particulier.getNumTelephone());
-			ps.setString(5, particulier.getTypeClient());
-			ps.setString(6, particulier.getEmail());			
+			ps.setString(5, particulier.getTypeClient());			
 			ps.executeUpdate();
 			ps.close();
 			com.close();
@@ -274,7 +268,7 @@ public class Dao implements Idao{
 			String login = "root";
 			String mdp ="";
 			Connection com = (Connection) DriverManager.getConnection(adresse, login, mdp);
-			String requete = "UPDATE comptes set clientId = ? Where id = ?";
+			String requete = "UPDATE comptes set IdClient = ? Where id = ?";
 			PreparedStatement ps = (PreparedStatement) com.prepareStatement(requete);	
 			ps.setInt(1, client.getId());
 			ps.setInt(2, epargne.getId());
@@ -295,7 +289,7 @@ public class Dao implements Idao{
 			String login = "root";
 			String mdp ="";
 			Connection com = (Connection) DriverManager.getConnection(adresse, login, mdp);
-			String requete = "UPDATE comptes set clientId = ? Where id = ?";
+			String requete = "UPDATE comptes set IdClient = ? Where id = ?";
 			PreparedStatement ps = (PreparedStatement) com.prepareStatement(requete);	
 			ps.setInt(1, client.getId());
 			ps.setInt(2, courant.getId());
