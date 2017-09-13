@@ -435,10 +435,9 @@ public class Dao implements Idao{
 			String login = "root";
 			String mdp ="";
 			Connection com = (Connection) DriverManager.getConnection(adresse, login, mdp);
-			String requete = "SELECT * FROM clients where  IdConseiller = ? and typeClient like particulier ?";
+			String requete = "SELECT * FROM clients where typeClient = ?";
 			PreparedStatement ps = (PreparedStatement) com.prepareStatement(requete);
-			ps.setInt(1, conseiller.getId());
-			ps.executeUpdate();
+			ps.setString(1, "particulier");
 			ResultSet rs = (ResultSet) ps.executeQuery();	
 			while (rs.next()) {
 				Particulier p = new Particulier();		
@@ -449,7 +448,7 @@ public class Dao implements Idao{
 				p.setTypeClient(rs.getString("typeClient"));
 				p.setNumTelephone(rs.getInt("telephone"));		
 				particuliers.add(p);
-				}	
+			}	
 			ps.close();
 			com.close();
 		} catch (Exception e) {
@@ -468,10 +467,9 @@ public class Dao implements Idao{
 			String login = "root";
 			String mdp ="";
 			Connection com = (Connection) DriverManager.getConnection(adresse, login, mdp);
-			String requete = "SELECT * FROM clients where  ConseillerId = ? and typeClient like entreprise ?";
+			String requete = "SELECT * FROM clients where typeClient = ?";
 			PreparedStatement ps = (PreparedStatement) com.prepareStatement(requete);
-			ps.setInt(1, conseiller.getId());
-			ps.executeUpdate();
+			ps.setString(1, "entreprise");
 			ResultSet rs = (ResultSet) ps.executeQuery();	
 			while (rs.next()) {
 				Entreprise e = new Entreprise();		
@@ -639,26 +637,32 @@ public class Dao implements Idao{
 	}
 	@Override
 	public List<Conseiller> FindAllConseiller(Gerant gerant) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	@Override
-	public int rechercherClient(String nom) {
-		// TODO Auto-generated method stub
-		int id = 0;
+		List<Conseiller> conseillers =new ArrayList<Conseiller>();
 		try {			
 			Class.forName("com.mysql.jdbc.Driver");
 			String adresse = "jdbc:mysql://localhost:3306/testsq";
 			String login = "root";
 			String mdp ="";
 			Connection com = (Connection) DriverManager.getConnection(adresse, login, mdp);
-			String requete = "SELECT * FROM clients where nom like ?";
+			String requete = "SELECT * FROM employes where idGerant = ?";
 			PreparedStatement ps = (PreparedStatement) com.prepareStatement(requete);
 			ResultSet rs = (ResultSet) ps.executeQuery();
-			ps.setString(1, nom);
+			ps.setInt(1, gerant.getId());
 			ps.executeUpdate();
-			rs.next();
-			id = rs.getInt("id");
+			while (rs.next()) {
+				Conseiller c = new Conseiller();
+				c.setId(rs.getInt("id"));
+				c.setNom(rs.getString("nom"));
+				c.setPrenom(rs.getString("prenom"));
+				c.setAdresse(rs.getString("adresse"));
+				c.setEmail(rs.getString("email"));
+				c.setIdAgence(rs.getInt("idAgence"));
+				c.setLogin(rs.getString("login"));
+				c.setMdp(rs.getString("mdp"));
+				conseillers.add(c);
+				
+			}
+			
 											
 			ps.close();
 			com.close();
@@ -666,8 +670,9 @@ public class Dao implements Idao{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} 		
-		return id;
+		return conseillers;
 	}
+	
 
 
 

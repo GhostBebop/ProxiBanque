@@ -20,7 +20,8 @@ public interface Idao {
 	public void ajouterEntreprise(Entreprise entreprise);
 	public void ajouterCompteEpargne(Epargne epargne);
 	public void ajouterCompteCourant(Courant courant);
-	public int rechercherClient(String nom);
+	//public Entreprise findEntreprise();
+	//public Particulier findParticulier();
 	public void attribuerCompteEpargne(Client client,Epargne epargne);
 	public void attribuerCompteCourant(Client client,Courant courant);
 	public void modifierCompteEpargne(Epargne epargne,int typeModif);

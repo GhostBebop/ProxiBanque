@@ -112,13 +112,13 @@ public class ServiceImple implements IserviceAuditeur,IserviceConseiller,Iservic
 	@Override
 	public List<Particulier> FindAllParticulier(Conseiller conseiller) {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.FindAllParticulier(conseiller);
 	}
 
 	@Override
 	public List<Entreprise> FindAllEntreprise(Conseiller conseiller) {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.FindAllEntreprise(conseiller);
 	}
 
 	@Override

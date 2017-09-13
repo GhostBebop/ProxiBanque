@@ -78,7 +78,7 @@ add constraint fk_agence_employe foreign key (idAgence) references employes(id);
 -- 
 
 alter table employes
-add idGerant int null;
+add idGerant int;
 
 alter table employes
 add constraint fk_conseiller_gerant foreign key (idGerant) references employes(id);
