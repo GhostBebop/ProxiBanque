@@ -18,10 +18,12 @@ import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+import com.huios.proxiBanque.metier.Conseiller;
 import com.huios.proxiBanque.metier.Courant;
 import com.huios.proxiBanque.metier.Entreprise;
 import com.huios.proxiBanque.metier.Epargne;
 import com.huios.proxiBanque.metier.Particulier;
+import com.huios.proxiBanque.service.IserviceAuditeur;
 import com.huios.proxiBanque.service.IserviceConseiller;
 import com.huios.proxiBanque.service.ServiceImple;
 public class Fenetre extends JFrame{
@@ -147,7 +149,9 @@ public class Fenetre extends JFrame{
 	JPanel pannel = new JPanel();
 	
 	List<Particulier> particuliers = new ArrayList<Particulier>();
-	List<Entreprise> entreprise = new ArrayList<Entreprise>();
+	List<Entreprise> entreprises = new ArrayList<Entreprise>();
+	List<Courant> courants = new ArrayList<Courant>();
+	
 	public Fenetre() {
 		setTitle("PROXIBANQUE");
 		setSize(700, 700);
@@ -368,6 +372,35 @@ public class Fenetre extends JFrame{
 				text15.setText("");								
 			}
 		});	
+		
+		
+		boutonShowAllSingle.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				IserviceConseiller is = new ServiceImple();	
+				combo14.removeAllItems();
+				Conseiller c = new Conseiller();
+				particuliers = is.FindAllParticulier(c);
+				for(Particulier p:particuliers) {
+					combo14.addItem(p.toString());
+				}
+			}
+		});
+		
+		boutonShowAllSociety.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				IserviceConseiller is = new ServiceImple();	
+				combo15.removeAllItems();
+				Conseiller c = new Conseiller();
+				entreprises = is.FindAllEntreprise(c);
+				for(Entreprise p:entreprises) {
+					combo15.addItem(p.toString());
+				}
+			}
+		});
 }
 		
 		/*conteneurAddPersonne.setLayout(new BoxLayout(conteneurAddPersonne,BoxLayout.PAGE_AXIS));
