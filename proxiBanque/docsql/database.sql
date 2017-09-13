@@ -9,7 +9,7 @@ prenom varchar(255),
 age int,
 adresse varchar(255) not null,
 telephone int (20) not null,
-typeClient varchar(32) not null,
+typeClient varchar(32) not null
 )ENGINE = InnoDB;
 
 -- 
@@ -77,7 +77,7 @@ add constraint fk_agence_employe foreign key (idAgence) references employes(id);
 -- 
 
 alter table employes
-add idGerant int null
+add idGerant int null;
 
 alter table employes
 add constraint fk_conseiller_gerant foreign key (idGerant) references employes(id);
