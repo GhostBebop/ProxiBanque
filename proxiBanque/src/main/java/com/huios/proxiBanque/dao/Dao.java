@@ -36,7 +36,7 @@ public class Dao implements Idao{
 				Epargne e = new Epargne();		
 				e.setId(rs.getInt("id"));
 				e.setIdClient(rs.getInt("idClient"));
-				e.setDateCreation(rs.getDate("dateCreation"));
+				e.setDateCreation(rs.getString("dateCreation"));
 				e.setCode(rs.getInt("code"));
 				e.setSolde(rs.getFloat("solde"));
 				e.setTaux(rs.getFloat("taux"));
@@ -69,7 +69,7 @@ public class Dao implements Idao{
 				Courant c = new Courant();		
 				c.setId(rs.getInt("id"));
 				c.setIdClient(rs.getInt("idClient"));	
-				c.setDateCreation(rs.getDate("dateCreation"));
+				c.setDateCreation(rs.getString("dateCreation"));
 				carte.setTypeCarte(rs.getString("typeCarte"));
 				carte.setIdCompte(rs.getInt("idCompte"));
 				c.setCarte(carte);
@@ -224,7 +224,7 @@ public class Dao implements Idao{
 			PreparedStatement ps = (PreparedStatement) com.prepareStatement(requete);	
 			ps.setInt(1, epargne.getCode());
 			ps.setFloat(2, epargne.getSolde());
-			ps.setDate(3, (Date) epargne.getDateCreation());
+			ps.setString(3, epargne.getDateCreation());
 			ps.setString(4, epargne.getTypeCompte());	
 			ps.setDouble(5, epargne.getTaux());	
 			ps.executeUpdate();
@@ -248,7 +248,7 @@ public class Dao implements Idao{
 			PreparedStatement ps = (PreparedStatement) com.prepareStatement(requete);	
 			ps.setInt(1, courant.getCode());
 			ps.setFloat(2, courant.getSolde());
-			ps.setDate(3, (Date) courant.getDateCreation());
+			ps.setString(3, courant.getDateCreation());
 			ps.setString(4, courant.getTypeCompte());	
 			ps.setDouble(5, courant.getDecouvert());	
 			ps.executeUpdate();
@@ -322,7 +322,7 @@ public class Dao implements Idao{
 			switch(typeModif) {
 				case(1) : ps.setInt(1, epargne.getId());ps.setInt(2, epargne.getId());break;
 				case(2) : ps.setFloat(1, epargne.getSolde());ps.setInt(2, epargne.getId());break;
-				case(3) : ps.setDate(1, (Date) epargne.getDateCreation());ps.setInt(2, epargne.getId());break;
+				case(3) : ps.setString(1, epargne.getDateCreation());ps.setInt(2, epargne.getId());break;
 				case(4) : ps.setDouble(1, epargne.getTaux());ps.setInt(2, epargne.getId());break;
 			default : break;
 			}
@@ -355,7 +355,7 @@ public class Dao implements Idao{
 			switch(typeModif) {
 				case(1) : ps.setInt(1, courant.getCode());ps.setInt(2, courant.getId());break;
 				case(2) : ps.setFloat(1, courant.getSolde());ps.setInt(2, courant.getId());break;
-				case(3) : ps.setDate(1, (Date) courant.getDateCreation());ps.setInt(2, courant.getId());break;
+				case(3) : ps.setString(1, courant.getDateCreation());ps.setInt(2, courant.getId());break;
 				case(4) : ps.setDouble(1, courant.getDecouvert());ps.setInt(2, courant.getId());break;
 			default : break;
 			}
@@ -513,7 +513,7 @@ public class Dao implements Idao{
 						e.setId(rs.getInt("id"));
 						e.setIdClient(rs.getInt("idClient"));
 						
-						e.setDateCreation(rs.getDate("dateCreation"));
+						e.setDateCreation(rs.getString("dateCreation"));
 						e.setCode(rs.getInt("code"));
 						e.setSolde(rs.getFloat("solde"));
 						e.setTaux(rs.getFloat("Taux"));
@@ -548,7 +548,7 @@ public class Dao implements Idao{
 				Courant c = new Courant();		
 				c.setId(rs.getInt("id"));
 				c.setIdClient(rs.getInt("idClient"));
-				c.setDateCreation(rs.getDate("dateCreation"));
+				c.setDateCreation(rs.getString("dateCreation"));
 				c.setCode(rs.getInt("code"));
 				carte.setTypeCarte(rs.getString("typeCarte"));
 				carte.setIdCompte(rs.getInt("idCompte"));

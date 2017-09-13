@@ -11,7 +11,7 @@ public class Compte {
 	private int code;
 	private int id;
 	protected float solde;
-	private Date dateCreation;
+	private String dateCreation;
 	private int idClient;
 	private String typeCompte;
 	
@@ -29,10 +29,11 @@ public class Compte {
 	public void setIdClient(int idClient) {
 		this.idClient = idClient;
 	}
-	public Date getDateCreation() {
+	
+	public String getDateCreation() {
 		return dateCreation;
 	}
-	public void setDateCreation(Date dateCreation) {
+	public void setDateCreation(String dateCreation) {
 		this.dateCreation = dateCreation;
 	}
 	public int getId() {
@@ -69,5 +70,6 @@ public class Compte {
 	public String toString() {
 		return "Compte [client=" + client + ", carte=" + carte + ", code=" + code + ", id=" + id + ", solde=" + solde
 				+ ", dateCreation=" + dateCreation + ", idClient=" + idClient + ", typeCompte=" + typeCompte + "]";
-	}		
+	}
+	
 }
