@@ -1,10 +1,9 @@
 package com.huios.proxiBanque.presentation.fenetre;
-import java.awt.BorderLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
+import java.awt.BorderLayout;
 import java.awt.Dimension;
+
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -14,70 +13,25 @@ import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import com.huios.proxiBanque.metier.Entreprise;
+import com.huios.proxiBanque.metier.Particulier;
 public class Fenetre extends JFrame{
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
-	/*private JPanel conteneurAddPersonne = new JPanel();
-	private JPanel conteneurAddVoiture = new JPanel();
-	private JPanel conteneurAttribuate = new JPanel();
-	private JPanel conteneurDeletePersonne = new JPanel();
-	private JPanel conteneurChange = new JPanel();
-	private JPanel conteneurActualize = new JPanel();
-	private JPanel conteneurDisplayPersonneVoiture = new JPanel();
-	private JPanel conteneurDeleteVoiture = new JPanel();
-	private JPanel conteneur = new JPanel();
-	private JPanel conteneurCombo = new JPanel();
-	private JPanel conteneurComboLabel = new JPanel();
-	
-	
-	
-	private JLabel label1 = new JLabel("nom");
-	private JLabel label2 = new JLabel("prenom");
-	private JLabel label3 = new JLabel("age");
-	private JLabel label4 = new JLabel("marque");
-	private JLabel label5 = new JLabel("concessionaire");
-	private JLabel label6 = new JLabel("id personne");
-	private JLabel label7 = new JLabel("id voiture");
-	private JLabel label8 = new JLabel("Menu des personnes                                                                  ");
-	private JLabel label9 = new JLabel("Mes voitures");
-	private JLabel label10 = new JLabel("Menu des voitures              ");
-	
-	private JButton boutonAddPersonne = new JButton("Add p");
-	private JButton boutonAddVoiture = new JButton("Add V");
-	private JButton boutonAttribuate = new JButton("Attribuate");
-	private JButton boutonDeletePersonne = new JButton("Delete P");
-	private JButton boutonChange = new JButton("Change");
-	private JButton boutonActualize = new JButton("Actualize All");
-	private JButton boutonActualizeVoiture = new JButton("Actualize V");
-	private JButton boutonDisplayPersonneVoiture = new JButton("Display P to V");
-	private JButton boutonDeleteVoiture = new JButton("Delete V");
-	
-	*/		
-	private JComboBox<String> comboSingle1 = new JComboBox<String>();
-	private JComboBox<String> comboSingle2 = new JComboBox<String>();
-	private JComboBox<String> comboSingle3 = new JComboBox<String>();
-	private JComboBox<String> comboSingle4 = new JComboBox<String>();
-	private JComboBox<String> comboSingle5 = new JComboBox<String>();	
-	private JComboBox<String> comboSociety6 = new JComboBox<String>();
-	private JComboBox<String> comboSociety7 = new JComboBox<String>();
-	private JComboBox<String> comboSociety8 = new JComboBox<String>();
-	private JComboBox<String> comboSociety9 = new JComboBox<String>();
-	private JComboBox<String> comboSociety10 = new JComboBox<String>();	
-	private JComboBox<String> comboCurrentAccount11 = new JComboBox<String>();
-	private JComboBox<String> comboCurrentAccount12 = new JComboBox<String>();
-	private JComboBox<String> comboCurrentAccount13 = new JComboBox<String>();
-	private JComboBox<String> comboCurrentAccount14 = new JComboBox<String>();
-	private JComboBox<String> comboCurrentAccount15 = new JComboBox<String>();	
-	private JComboBox<String> comboCurrentthriftness16 = new JComboBox<String>();
-	private JComboBox<String> comboCurrentthriftness17 = new JComboBox<String>();
-	private JComboBox<String> comboCurrentthriftness18 = new JComboBox<String>();
-	private JComboBox<String> comboCurrentthriftness19 = new JComboBox<String>();
-	private JComboBox<String> comboCurrentthriftness20 = new JComboBox<String>();
-	private JComboBox<String> comboCard21 = new JComboBox<String>();
-	
+		
+	private JPanel conteneur1 = new JPanel();
+	private JPanel conteneur2 = new JPanel();
+	private JPanel conteneur3 = new JPanel();
+	private JPanel conteneur4 = new JPanel();
+	private JPanel conteneur5 = new JPanel();
+	private JPanel conteneur6 = new JPanel();
+	private JPanel conteneur7 = new JPanel();
+	private JPanel conteneur8 = new JPanel();
+	private JPanel conteneur9 = new JPanel();
+	private JPanel conteneur10 = new JPanel();
+			
 	private JTextField text1 = new JTextField(25);
 	private JTextField text2 = new JTextField(25);
 	private JTextField text3 = new JTextField(25);
@@ -88,22 +42,27 @@ public class Fenetre extends JFrame{
 	private JTextField text8 = new JTextField(25);
 	private JTextField text9 = new JTextField(25);
 	private JTextField text10 = new JTextField(25);
+	private JTextField text11 = new JTextField(25);
+	private JTextField text12 = new JTextField(25);
+	private JTextField text13 = new JTextField(25);
+	private JTextField text14 = new JTextField(25);
+	private JTextField text15 = new JTextField(25);
 
-	private JLabel label1 = new JLabel("");
-	private JLabel label2 = new JLabel("");
-	private JLabel label3 = new JLabel("");
-	private JLabel label4 = new JLabel("");
-	private JLabel label5 = new JLabel("");
-	private JLabel label6 = new JLabel("");
-	private JLabel label7 = new JLabel("");
-	private JLabel label8 = new JLabel("");
-	private JLabel label9 = new JLabel("");
-	private JLabel label10 = new JLabel("");
-	private JLabel label11 = new JLabel("");
-	private JLabel label12 = new JLabel("");
-	private JLabel label13 = new JLabel("");
-	private JLabel label14 = new JLabel("");
-	private JLabel label15 = new JLabel("");
+	private JLabel label1 = new JLabel("nom");
+	private JLabel label2 = new JLabel("prenom");
+	private JLabel label3 = new JLabel("adresse");
+	private JLabel label4 = new JLabel("telephone");
+	private JLabel label5 = new JLabel("nom");
+	private JLabel label6 = new JLabel("adresse");
+	private JLabel label7 = new JLabel("telephone");
+	private JLabel label8 = new JLabel("code");
+	private JLabel label9 = new JLabel("solde");
+	private JLabel label10 = new JLabel("dateCreation");
+	private JLabel label11 = new JLabel("decouvert");
+	private JLabel label12 = new JLabel("code");
+	private JLabel label13 = new JLabel("solde");
+	private JLabel label14 = new JLabel("dateCreation");
+	private JLabel label15 = new JLabel("taux");
 	private JLabel label16 = new JLabel("");
 	private JLabel label17 = new JLabel("");
 	private JLabel label18 = new JLabel("");
@@ -113,28 +72,16 @@ public class Fenetre extends JFrame{
 	private JButton boutonAddSingle = new JButton("Validate");
 	private JButton boutonAddSociety = new JButton("Validate");
 	private JButton boutonAddCurrentAccount = new JButton("Validate");
-	private JButton boutonAddthriftness = new JButton("Validate");
-	
+	private JButton boutonAddThriftness = new JButton("Validate");	
 	private JButton boutonAttribuateTriftness = new JButton("Validate");
 	private JButton boutonAttribuateCurrentAccount = new JButton("Validate");
-	
-	
-	private JButton boutonDeleteTriftness = new JButton("Validate");
+	private JButton boutonDeleteThriftness = new JButton("Validate");
 	private JButton boutonDeleteCurrentAccount = new JButton("Validate");
 	private JButton boutonDeleteClient = new JButton("Validate");
-	
-	
-	private JButton boutonAddVoiture = new JButton("Add V");
-	private JButton boutonAttribuate = new JButton("Attribuate");
-	private JButton boutonDeletePersonne = new JButton("Delete P");
-	private JButton boutonChange = new JButton("Change");
-	private JButton boutonActualize = new JButton("Actualize All");
-	private JButton boutonActualizeVoiture = new JButton("Actualize V");
-	private JButton boutonDisplayPersonneVoiture = new JButton("Display P to V");
-	private JButton boutonDeleteVoiture = new JButton("Delete V");
-	
-	JPanel pannel = new JPanel();
-	
+	private JButton boutonShowAllCurrentAccount = new JButton("Actualize");
+	private JButton boutonShowAllThriftness = new JButton("Actualize");
+	private JButton boutonShowAllSingle = new JButton("Actualize");
+	private JButton boutonShowAllSociety = new JButton("Actualize");
 	
 	private JPanel onglet1 = new JPanel();
 	private JPanel onglet2 = new JPanel();
@@ -158,7 +105,20 @@ public class Fenetre extends JFrame{
 	private JPanel onglet12 = new JPanel();
 	private JPanel onglet13 = new JPanel();
 	
+	private JComboBox<String> combo1 = new JComboBox<String>();
+	private JComboBox<String> combo2 = new JComboBox<String>();
+	private JComboBox<String> combo3 = new JComboBox<String>();
+	private JComboBox<String> combo4 = new JComboBox<String>();
+	private JComboBox<String> combo5 = new JComboBox<String>();
+	private JComboBox<String> combo6 = new JComboBox<String>();
+	private JComboBox<String> combo7 = new JComboBox<String>();
+	private JComboBox<String> combo8 = new JComboBox<String>();
 	
+	
+	JPanel pannel = new JPanel();
+	
+	List<Particulier> particuliers = new ArrayList<Particulier>();
+	List<Entreprise> entreprise = new ArrayList<Entreprise>();	
 	public Fenetre() {
 		setTitle("PROXIBANQUE");
 		setSize(700, 700);
@@ -210,7 +170,45 @@ public class Fenetre extends JFrame{
 		ongletsShowAll.setOpaque(true);
 		onglets.setOpaque(true);
 		
+		conteneur1.setLayout(new BoxLayout(conteneur1,BoxLayout.PAGE_AXIS));
+		conteneur1.add(label1, BorderLayout.NORTH);conteneur1.add(text1, BorderLayout.NORTH);
+		conteneur1.add(label2, BorderLayout.SOUTH);conteneur1.add(text2, BorderLayout.SOUTH);
+		conteneur1.add(label3, BorderLayout.CENTER);conteneur1.add(text3, BorderLayout.CENTER);
+		conteneur1.add(label4, BorderLayout.AFTER_LAST_LINE);conteneur1.add(text4, BorderLayout.AFTER_LAST_LINE);
+		onglet1.add(conteneur1);
+		onglet1.add(boutonAddSingle);
 		
+		
+		conteneur2.setLayout(new BoxLayout(conteneur2,BoxLayout.PAGE_AXIS));
+		conteneur2.add(label5, BorderLayout.NORTH);conteneur2.add(text5, BorderLayout.NORTH);
+		conteneur2.add(label6, BorderLayout.SOUTH);conteneur2.add(text6, BorderLayout.SOUTH);
+		conteneur2.add(label7, BorderLayout.CENTER);conteneur2.add(text7, BorderLayout.CENTER);
+		onglet2.add(conteneur2);
+		onglet2.add(boutonAddSociety);
+		
+		conteneur3.setLayout(new BoxLayout(conteneur3,BoxLayout.PAGE_AXIS));
+		conteneur3.add(label8, BorderLayout.NORTH);conteneur3.add(text8, BorderLayout.NORTH);
+		conteneur3.add(label9, BorderLayout.SOUTH);conteneur3.add(text9, BorderLayout.SOUTH);
+		conteneur3.add(label10, BorderLayout.CENTER);conteneur3.add(text10, BorderLayout.CENTER);
+		conteneur3.add(label11, BorderLayout.CENTER);conteneur3.add(text11, BorderLayout.CENTER);
+		onglet3.add(conteneur3);
+		onglet3.add(boutonAddCurrentAccount);
+		
+		conteneur4.setLayout(new BoxLayout(conteneur4,BoxLayout.PAGE_AXIS));
+		conteneur4.add(label12, BorderLayout.NORTH);conteneur4.add(text12, BorderLayout.NORTH);
+		conteneur4.add(label13, BorderLayout.SOUTH);conteneur4.add(text13, BorderLayout.SOUTH);
+		conteneur4.add(label14, BorderLayout.CENTER);conteneur4.add(text14, BorderLayout.CENTER);
+		conteneur4.add(label15, BorderLayout.CENTER);conteneur4.add(text15, BorderLayout.CENTER);
+		onglet4.add(conteneur4);
+		onglet4.add(boutonAddThriftness);
+		
+		conteneur5.setLayout(new BoxLayout(conteneur5,BoxLayout.PAGE_AXIS));
+		conteneur5.add(label16, BorderLayout.NORTH);conteneur5.add(text12, BorderLayout.NORTH);
+		conteneur5.add(label17, BorderLayout.SOUTH);conteneur5.add(text13, BorderLayout.SOUTH);
+		conteneur5.add(combo1);
+		conteneur5.add(combo2);
+		conteneur5.add(label15, BorderLayout.CENTER);conteneur4.add(text15, BorderLayout.CENTER);
+		onglet4.add(conteneur4);
 		
 		pannel.add(onglets);		
 		setContentPane(pannel);

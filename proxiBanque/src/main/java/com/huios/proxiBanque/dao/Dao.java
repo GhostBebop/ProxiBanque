@@ -172,7 +172,7 @@ public class Dao implements Idao{
 			String login = "root";
 			String mdp ="";
 			Connection com = (Connection) DriverManager.getConnection(adresse, login, mdp);
-			String requete = "INSERT INTO clients(nom,prenom,adresse,telephone,typeClient) VALUES(?,?,?,?,?)";
+			String requete = "INSERT INTO clients(nom,prenom,adresse,telephone,typeClient,idConseiller) VALUES(?,?,?,?,?)";
 			PreparedStatement ps = (PreparedStatement) com.prepareStatement(requete);	
 			ps.setString(1, particulier.getNom());
 			ps.setString(2, particulier.getPrenom());
