@@ -99,30 +99,7 @@ public class TestConseiller {
 		c.setNumTelephone(4452730);
 		c.setPrenom("Conseiller1");
 		c.setTypeEmploye("conseiller");
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			String adresse = "jdbc:mysql://localhost:3306/testsq";
-			String login = "root";
-			String mdp ="";
-			Connection com = (Connection) DriverManager.getConnection(adresse, login, mdp);
-			String requete = "INSERT INTO employes(nom,prenom,adresse,email,mdp,login,tel,typeEmploye) VALUES(?,?,?,?,?,?,?,?)";
-			PreparedStatement ps = (PreparedStatement) com.prepareStatement(requete);	
-			ps.setString(1, c.getNom());
-			ps.setString(2, c.getPrenom());
-			ps.setString(3, c.getAdresse());
-			ps.setString(4, c.getEmail());
-			ps.setString(5, c.getMdp());
-			ps.setString(6, c.getLogin());
-			ps.setInt(7, c.getNumTelephone());
-			ps.setString(8, c.getTypeEmploye());
-						
-			ps.executeUpdate();
-			ps.close();
-			com.close();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		dao.ajouterConseiller(c);
 		
 		
 	}
