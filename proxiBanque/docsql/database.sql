@@ -9,7 +9,8 @@ prenom varchar(255),
 age int,
 adresse varchar(255) not null,
 telephone int (20) not null,
-typeClient varchar(32) not null
+typeClient varchar(32) not null,
+email varchar(32)
 )ENGINE = InnoDB;
 
 -- 
