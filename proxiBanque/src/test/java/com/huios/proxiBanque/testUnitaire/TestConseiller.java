@@ -13,6 +13,8 @@ import com.huios.proxiBanque.dao.Idao;
 import com.huios.proxiBanque.metier.Agence;
 import com.huios.proxiBanque.metier.Client;
 import com.huios.proxiBanque.metier.Conseiller;
+import com.huios.proxiBanque.metier.Courant;
+import com.huios.proxiBanque.metier.Entreprise;
 import com.huios.proxiBanque.metier.Gerant;
 import com.huios.proxiBanque.metier.Particulier;
 import com.mysql.jdbc.PreparedStatement;
@@ -52,6 +54,7 @@ public class TestConseiller {
 		}
 	}
 	
+	@Ignore
 	@Test
 	public void testCreationGerant() {
 		Gerant ger = new Gerant();
@@ -116,6 +119,25 @@ public class TestConseiller {
 		p.setEmail("particulier@gmail.com");
 		p.setTypeClient("particulier");
 		dao.ajouterParticulier(p);
+		
+	}
+	
+	@Ignore
+	@Test
+	public void testCreationEntreprise() {
+		Entreprise e = new Entreprise();
+		e.setNomEntreprise("ENTERPRISE");
+		e.setNumTelephone(4112410);
+		e.setAdresse("MADA");
+		e.setEmail("entreprise@gmail.com");
+		e.setTypeClient("entreprise");
+		dao.ajouterEntreprise(e);
+		
+	}
+	@Test
+	public void testModifierCompte() {
+		Courant c = new Courant();
+		c.setCode(1608);//code
 		
 	}
 
