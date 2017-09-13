@@ -25,7 +25,7 @@ public class Dao implements Idao{
 		List<Epargne> epargnes = new ArrayList<Epargne>();
 		try {			
 			Class.forName("com.mysql.jdbc.Driver");
-			String adresse = "jdbc:mysql://localhost:3306/personnebdd";
+			String adresse = "jdbc:mysql://localhost:3306/testsq";
 			String login = "root";
 			String mdp ="";
 			Connection com = (Connection) DriverManager.getConnection(adresse, login, mdp);
@@ -613,7 +613,30 @@ public class Dao implements Idao{
 	@Override
 	public void ajouterConseiller(Conseiller conseiller) {
 		// TODO Auto-generated method stub
-		
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			String adresse = "jdbc:mysql://localhost:3306/testsq";
+			String login = "root";
+			String mdp ="";
+			Connection com = (Connection) DriverManager.getConnection(adresse, login, mdp);
+			String requete = "INSERT INTO employes(nom,prenom,adresse,email,mdp,login,tel,typeEmploye) VALUES(?,?,?,?,?,?,?,?)";
+			PreparedStatement ps = (PreparedStatement) com.prepareStatement(requete);	
+			ps.setString(1, conseiller.getNom());
+			ps.setString(2, conseiller.getPrenom());
+			ps.setString(3, conseiller.getAdresse());
+			ps.setString(4, conseiller.getEmail());
+			ps.setString(5, conseiller.getMdp());
+			ps.setString(6, conseiller.getLogin());
+			ps.setInt(7, conseiller.getNumTelephone());
+			ps.setString(8, conseiller.getTypeEmploye());
+						
+			ps.executeUpdate();
+			ps.close();
+			com.close();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	@Override
 	public List<Conseiller> FindAllConseiller(Gerant gerant) {
