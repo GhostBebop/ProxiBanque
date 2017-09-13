@@ -68,7 +68,7 @@ typeCarte varchar(32) not null
 -- 
 
 alter table employes
-add idAgence int null;
+add idAgence int ;
 
 alter table employes
 add constraint fk_agence_employe foreign key (idAgence) references employes(id);
@@ -88,7 +88,7 @@ add constraint fk_conseiller_gerant foreign key (idGerant) references employes(i
 -- 
 
 alter table clients
-add idConseiller;
+add idConseiller int;
 
 alter table clients
 add constraint fk_conseiller_client foreign key (idConseiller) references employes(id);
@@ -98,7 +98,7 @@ add constraint fk_conseiller_client foreign key (idConseiller) references employ
 -- 
 
 alter table comptes
-add idClient;
+add idClient int;
 
 alter table comptes
 add constraint fk_client_compte foreign key (idClient) references comptes(id);
