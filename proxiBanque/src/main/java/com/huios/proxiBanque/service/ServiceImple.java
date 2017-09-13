@@ -52,7 +52,7 @@ public class ServiceImple implements IserviceAuditeur,IserviceConseiller,Iservic
 	@Override
 	public void ajouterEntreprise(Entreprise entreprise) {
 		// TODO Auto-generated method stub
-		
+		dao.ajouterEntreprise(entreprise);
 	}
 
 	@Override

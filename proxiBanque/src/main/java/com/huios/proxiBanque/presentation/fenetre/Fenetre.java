@@ -17,7 +17,10 @@ import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+
+import com.huios.proxiBanque.metier.Courant;
 import com.huios.proxiBanque.metier.Entreprise;
+import com.huios.proxiBanque.metier.Epargne;
 import com.huios.proxiBanque.metier.Particulier;
 import com.huios.proxiBanque.service.IserviceConseiller;
 import com.huios.proxiBanque.service.ServiceImple;
@@ -304,8 +307,66 @@ public class Fenetre extends JFrame{
 				text3.setText("");
 				text4.setText("");
 			}
-		});									
-	}
+		});	
+		
+		boutonAddSociety.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				Entreprise entreprise = new Entreprise();
+				entreprise.setNomEntreprise(text5.getText());
+				entreprise.setAdresse(text6.getText());
+				entreprise.setNumTelephone(Integer.parseInt(text7.getText()));
+				entreprise.setTypeClient("entreprise");
+				IserviceConseiller is = new ServiceImple();
+				is.ajouterEntreprise(entreprise);				 
+				text5.setText("");
+				text6.setText("");	
+				text7.setText("");
+			
+			}
+		});
+		
+		boutonAddCurrentAccount.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				Courant c = new Courant();
+				c.setCode(Integer.parseInt(text8.getText()));
+				c.setSolde(Integer.parseInt(text9.getText()));
+				c.setDateCreation(text10.getText());
+				c.setDecouvert(Float.parseFloat(text11.getText()));
+				IserviceConseiller is = new ServiceImple();
+				is.ajouterCompteCourant(c);				 
+				text8.setText("");
+				text9.setText("");	
+				text10.setText("");
+				text11.setText("");			
+			}
+		});	
+		
+		
+		boutonAddThriftness.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				Epargne epargne = new Epargne();
+				epargne.setCode(Integer.parseInt(text12.getText()));
+				epargne.setSolde(Integer.parseInt(text13.getText()));
+				epargne.setDateCreation(text14.getText());
+				epargne.setTaux(Float.parseFloat(text15.getText()));
+				IserviceConseiller is = new ServiceImple();
+				is.ajouterCompteEpargne(epargne);				 
+				text11.setText("");
+				text12.setText("");	
+				text13.setText("");
+				text14.setText("");								
+			}
+		});	
+}
 		
 		/*conteneurAddPersonne.setLayout(new BoxLayout(conteneurAddPersonne,BoxLayout.PAGE_AXIS));
 		conteneurAddPersonne.add(label1,BorderLayout.NORTH);conteneurAddPersonne.add(text1,BorderLayout.NORTH);
