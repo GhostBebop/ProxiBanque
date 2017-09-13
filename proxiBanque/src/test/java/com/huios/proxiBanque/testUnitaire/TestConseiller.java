@@ -135,10 +135,14 @@ public class TestConseiller {
 		
 	}
 	@Test
-	public void testModifierCompte() {
+	public void testAjouterCompte() {
 		Courant c = new Courant();
 		c.setCode(1608);//code
-		
+		c.setSolde((float)1500.20);//solde
+		c.setDateCreation("17/02/17");//dateCreation
+	//idClient
+		c.setTypeCompte("courant");//typeCompte
+		dao.ajouterCompteCourant(c);
 	}
 
 }

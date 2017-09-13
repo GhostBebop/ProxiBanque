@@ -98,7 +98,7 @@ add constraint fk_conseiller_client foreign key (idConseiller) references employ
 -- 
 
 alter table comptes
-add idClient int not null;
+add idClient;
 
 alter table comptes
 add constraint fk_client_compte foreign key (idClient) references comptes(id);
