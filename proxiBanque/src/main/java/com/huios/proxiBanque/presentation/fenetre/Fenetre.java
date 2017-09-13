@@ -55,15 +55,28 @@ public class Fenetre extends JFrame{
 	private JButton boutonDisplayPersonneVoiture = new JButton("Display P to V");
 	private JButton boutonDeleteVoiture = new JButton("Delete V");
 	
-		
-	private JComboBox<String> comboPersonne = new JComboBox<String>();
-	private JComboBox<String> comboVoiture = new JComboBox<String>();
-	private JComboBox<String> comboPersonneVoiture = new JComboBox<String>();
-	private JComboBox<String> comboDeletePersonne = new JComboBox<String>();
-	private JComboBox<String> comboDeleteVoiture = new JComboBox<String>();
-	private JComboBox<String> comboAttribuateVoiture = new JComboBox<String>();
-	private JComboBox<String> comboAttribuatePersonne = new JComboBox<String>();
-	private JComboBox<String> comboVoiturePersonne = new JComboBox<String>();
+	*/		
+	private JComboBox<String> comboSingle1 = new JComboBox<String>();
+	private JComboBox<String> comboSingle2 = new JComboBox<String>();
+	private JComboBox<String> comboSingle3 = new JComboBox<String>();
+	private JComboBox<String> comboSingle4 = new JComboBox<String>();
+	private JComboBox<String> comboSingle5 = new JComboBox<String>();	
+	private JComboBox<String> comboSociety6 = new JComboBox<String>();
+	private JComboBox<String> comboSociety7 = new JComboBox<String>();
+	private JComboBox<String> comboSociety8 = new JComboBox<String>();
+	private JComboBox<String> comboSociety9 = new JComboBox<String>();
+	private JComboBox<String> comboSociety10 = new JComboBox<String>();	
+	private JComboBox<String> comboCurrentAccount11 = new JComboBox<String>();
+	private JComboBox<String> comboCurrentAccount12 = new JComboBox<String>();
+	private JComboBox<String> comboCurrentAccount13 = new JComboBox<String>();
+	private JComboBox<String> comboCurrentAccount14 = new JComboBox<String>();
+	private JComboBox<String> comboCurrentAccount15 = new JComboBox<String>();	
+	private JComboBox<String> comboCurrentthriftness16 = new JComboBox<String>();
+	private JComboBox<String> comboCurrentthriftness17 = new JComboBox<String>();
+	private JComboBox<String> comboCurrentthriftness18 = new JComboBox<String>();
+	private JComboBox<String> comboCurrentthriftness19 = new JComboBox<String>();
+	private JComboBox<String> comboCurrentthriftness20 = new JComboBox<String>();
+	private JComboBox<String> comboCard21 = new JComboBox<String>();
 	
 	private JTextField text1 = new JTextField(25);
 	private JTextField text2 = new JTextField(25);
@@ -71,19 +84,54 @@ public class Fenetre extends JFrame{
 	private JTextField text4 = new JTextField(25);
 	private JTextField text5 = new JTextField(25);
 	private JTextField text6 = new JTextField(25);
-	private JTextField text7 = new JTextField(25);*/
+	private JTextField text7 = new JTextField(25);
+	private JTextField text8 = new JTextField(25);
+	private JTextField text9 = new JTextField(25);
+	private JTextField text10 = new JTextField(25);
+
+	private JLabel label1 = new JLabel("");
+	private JLabel label2 = new JLabel("");
+	private JLabel label3 = new JLabel("");
+	private JLabel label4 = new JLabel("");
+	private JLabel label5 = new JLabel("");
+	private JLabel label6 = new JLabel("");
+	private JLabel label7 = new JLabel("");
+	private JLabel label8 = new JLabel("");
+	private JLabel label9 = new JLabel("");
+	private JLabel label10 = new JLabel("");
+	private JLabel label11 = new JLabel("");
+	private JLabel label12 = new JLabel("");
+	private JLabel label13 = new JLabel("");
+	private JLabel label14 = new JLabel("");
+	private JLabel label15 = new JLabel("");
+	private JLabel label16 = new JLabel("");
+	private JLabel label17 = new JLabel("");
+	private JLabel label18 = new JLabel("");
+	private JLabel label19 = new JLabel("");
+	private JLabel label20 = new JLabel("");
 	
-	private JComboBox<String> comboSingle1 = new JComboBox<String>();
-	private JComboBox<String> comboSingle2 = new JComboBox<String>();
-	private JComboBox<String> comboSingle3 = new JComboBox<String>();
-	private JComboBox<String> comboSingle4 = new JComboBox<String>();
-	private JComboBox<String> comboSingle5 = new JComboBox<String>();
+	private JButton boutonAddSingle = new JButton("Validate");
+	private JButton boutonAddSociety = new JButton("Validate");
+	private JButton boutonAddCurrentAccount = new JButton("Validate");
+	private JButton boutonAddthriftness = new JButton("Validate");
 	
-	private JComboBox<String> comboSingle6 = new JComboBox<String>();
-	private JComboBox<String> comboSingle7 = new JComboBox<String>();
-	private JComboBox<String> comboSingle8 = new JComboBox<String>();
-	private JComboBox<String> comboSingle9 = new JComboBox<String>();
-	private JComboBox<String> comboSingle10 = new JComboBox<String>();
+	private JButton boutonAttribuateTriftness = new JButton("Validate");
+	private JButton boutonAttribuateCurrentAccount = new JButton("Validate");
+	
+	
+	private JButton boutonDeleteTriftness = new JButton("Validate");
+	private JButton boutonDeleteCurrentAccount = new JButton("Validate");
+	private JButton boutonDeleteClient = new JButton("Validate");
+	
+	
+	private JButton boutonAddVoiture = new JButton("Add V");
+	private JButton boutonAttribuate = new JButton("Attribuate");
+	private JButton boutonDeletePersonne = new JButton("Delete P");
+	private JButton boutonChange = new JButton("Change");
+	private JButton boutonActualize = new JButton("Actualize All");
+	private JButton boutonActualizeVoiture = new JButton("Actualize V");
+	private JButton boutonDisplayPersonneVoiture = new JButton("Display P to V");
+	private JButton boutonDeleteVoiture = new JButton("Delete V");
 	
 	JPanel pannel = new JPanel();
 	
