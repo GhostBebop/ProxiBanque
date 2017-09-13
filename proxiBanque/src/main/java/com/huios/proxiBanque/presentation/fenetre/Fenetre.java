@@ -33,6 +33,7 @@ public class Fenetre extends JFrame{
 	private JPanel conteneur10 = new JPanel();
 	private JPanel conteneur11 = new JPanel();
 	private JPanel conteneur12 = new JPanel();
+	private JPanel conteneur13 = new JPanel();
 			
 	private JTextField text1 = new JTextField(25);
 	private JTextField text2 = new JTextField(25);
@@ -74,6 +75,12 @@ public class Fenetre extends JFrame{
 	private JLabel label22 = new JLabel("client");
 	private JLabel label23 = new JLabel("current account");
 	private JLabel label24 = new JLabel("client");
+	private JLabel label25 = new JLabel("client");
+	private JLabel label26 = new JLabel("current account");
+	private JLabel label27 = new JLabel("client");
+	private JLabel label28 = new JLabel("thriftiness");
+	private JLabel label29 = new JLabel("single");
+	private JLabel label30 = new JLabel("society");
 	
 	private JButton boutonAddSingle = new JButton("Validate");
 	private JButton boutonAddSociety = new JButton("Validate");
@@ -120,6 +127,12 @@ public class Fenetre extends JFrame{
 	private JComboBox<String> combo7 = new JComboBox<String>();
 	private JComboBox<String> combo8 = new JComboBox<String>();
 	private JComboBox<String> combo9 = new JComboBox<String>();
+	private JComboBox<String> combo10 = new JComboBox<String>();
+	private JComboBox<String> combo11 = new JComboBox<String>();
+	private JComboBox<String> combo12 = new JComboBox<String>();
+	private JComboBox<String> combo13 = new JComboBox<String>();
+	private JComboBox<String> combo14 = new JComboBox<String>();
+	private JComboBox<String> combo15 = new JComboBox<String>();
 	
 	
 	JPanel pannel = new JPanel();
@@ -239,24 +252,26 @@ public class Fenetre extends JFrame{
 		onglet14.add(boutonDeleteClient);
 		
 		
-		conteneur9.setLayout(new BoxLayout(conteneur9,BoxLayout.PAGE_AXIS));
-		conteneur9.add(label24, BorderLayout.NORTH);conteneur9.add(combo9, BorderLayout.NORTH);
-		onglet15.add(conteneur9);
+		conteneur10.setLayout(new BoxLayout(conteneur10,BoxLayout.PAGE_AXIS));
+		conteneur10.add(label25, BorderLayout.NORTH);conteneur10.add(combo10, BorderLayout.NORTH);
+		conteneur10.add(label26, BorderLayout.NORTH);conteneur10.add(combo11, BorderLayout.NORTH);
+		onglet15.add(conteneur10);
 		onglet15.add(boutonShowAllCurrentAccount);
 		
-		conteneur10.setLayout(new BoxLayout(conteneur10,BoxLayout.PAGE_AXIS));
-		conteneur10.add(label24, BorderLayout.NORTH);conteneur10.add(combo9, BorderLayout.NORTH);
-		onglet16.add(conteneur10);
+		conteneur11.setLayout(new BoxLayout(conteneur11,BoxLayout.PAGE_AXIS));
+		conteneur11.add(label27, BorderLayout.NORTH);conteneur11.add(combo12, BorderLayout.NORTH);
+		conteneur11.add(label28, BorderLayout.NORTH);conteneur11.add(combo13, BorderLayout.NORTH);
+		onglet16.add(conteneur11);
 		onglet16.add(boutonShowAllThriftness);
 		
-		conteneur11.setLayout(new BoxLayout(conteneur11,BoxLayout.PAGE_AXIS));
-		conteneur11.add(label24, BorderLayout.NORTH);conteneur11.add(combo9, BorderLayout.NORTH);
-		onglet17.add(conteneur11);
+		conteneur12.setLayout(new BoxLayout(conteneur12,BoxLayout.PAGE_AXIS));
+		conteneur12.add(label29, BorderLayout.NORTH);conteneur12.add(combo14, BorderLayout.NORTH);
+		onglet17.add(conteneur12);
 		onglet17.add(boutonShowAllSingle);
 		
-		conteneur12.setLayout(new BoxLayout(conteneur12,BoxLayout.PAGE_AXIS));
-		conteneur12.add(label24, BorderLayout.NORTH);conteneur12.add(combo9, BorderLayout.NORTH);
-		onglet18.add(conteneur12);
+		conteneur13.setLayout(new BoxLayout(conteneur13,BoxLayout.PAGE_AXIS));
+		conteneur13.add(label30, BorderLayout.NORTH);conteneur13.add(combo15, BorderLayout.NORTH);
+		onglet18.add(conteneur13);
 		onglet18.add(boutonShowAllSociety);
 
 
