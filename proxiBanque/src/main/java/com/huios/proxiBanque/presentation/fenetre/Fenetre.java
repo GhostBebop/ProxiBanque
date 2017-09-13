@@ -3,7 +3,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.beans.PropertyChangeListener;
 
+import javax.swing.Action;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -15,6 +19,8 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import com.huios.proxiBanque.metier.Entreprise;
 import com.huios.proxiBanque.metier.Particulier;
+import com.huios.proxiBanque.service.IserviceConseiller;
+import com.huios.proxiBanque.service.ServiceImple;
 public class Fenetre extends JFrame{
 	/**
 	 * 
@@ -274,11 +280,32 @@ public class Fenetre extends JFrame{
 		onglet18.add(conteneur13);
 		onglet18.add(boutonShowAllSociety);
 
-
+		
 		
 		pannel.add(onglets);		
 		setContentPane(pannel);
 		pack();
+		
+		boutonAddSingle.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				Particulier p = new Particulier();
+				p.setNom(text1.getText());
+				p.setPrenom(text2.getText());
+				p.setAdresse(text3.getText());
+				p.setNumTelephone(Integer.parseInt(text4.getText()));
+				IserviceConseiller is = new ServiceImple();
+				is.ajouterParticulier(p);				 
+				text1.setText("");
+				text2.setText("");	
+				text3.setText("");
+				text4.setText("");
+			}
+		});									
+	}
+		
 		/*conteneurAddPersonne.setLayout(new BoxLayout(conteneurAddPersonne,BoxLayout.PAGE_AXIS));
 		conteneurAddPersonne.add(label1,BorderLayout.NORTH);conteneurAddPersonne.add(text1,BorderLayout.NORTH);
 		conteneurAddPersonne.add(label2,BorderLayout.CENTER);conteneurAddPersonne.add(text2,BorderLayout.CENTER);
@@ -520,5 +547,5 @@ public class Fenetre extends JFrame{
 				}
 			}
 		});*/
-	}					
-}
+}					
+

@@ -46,7 +46,7 @@ public class ServiceImple implements IserviceAuditeur,IserviceConseiller,Iservic
 	@Override
 	public void ajouterParticulier(Particulier particulier) {
 		// TODO Auto-generated method stub
-		
+		dao.ajouterParticulier(particulier);
 	}
 
 	@Override
