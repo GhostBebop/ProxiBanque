@@ -18,6 +18,7 @@ import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+import com.huios.proxiBanque.metier.Client;
 import com.huios.proxiBanque.metier.Conseiller;
 import com.huios.proxiBanque.metier.Courant;
 import com.huios.proxiBanque.metier.Entreprise;
@@ -151,6 +152,8 @@ public class Fenetre extends JFrame{
 	List<Particulier> particuliers = new ArrayList<Particulier>();
 	List<Entreprise> entreprises = new ArrayList<Entreprise>();
 	List<Courant> courants = new ArrayList<Courant>();
+	List<Epargne> epargnes = new ArrayList<Epargne>();
+	List<Client> clients = new ArrayList<Client>();
 	
 	public Fenetre() {
 		setTitle("PROXIBANQUE");
@@ -399,6 +402,32 @@ public class Fenetre extends JFrame{
 				for(Entreprise p:entreprises) {
 					combo15.addItem(p.toString());
 				}
+			}
+		});
+		
+		boutonShowAllCurrentAccount.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				Courant courant = new Courant();
+				Client client = new Client();
+				client.setId(clients.get(combo10.getSelectedIndex()).getId());
+				courant.setId(courants.get(combo11.getSelectedIndex()).getId());
+				IserviceConseiller is = new ServiceImple();
+				is.attribuerCompteCourant(client, courant);
+			}
+		});
+		
+		boutonShowAllThriftness.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				Epargne epargne = new Epargne();
+				Client client = new Client();
+				client.setId(clients.get(combo12.getSelectedIndex()).getId());
+				epargne.setId(epargnes.get(combo13.getSelectedIndex()).getId());
+				IserviceConseiller is = new ServiceImple();
+				is.attribuerCompteEpargne(client, epargne);
 			}
 		});
 }

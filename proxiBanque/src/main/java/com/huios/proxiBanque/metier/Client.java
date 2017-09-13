@@ -6,7 +6,7 @@ package com.huios.proxiBanque.metier;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Client {
+public class Client {
 	private List<Compte> mesComptes = new ArrayList<Compte>();
 	private Conseiller monConseiller;
 	private int id;

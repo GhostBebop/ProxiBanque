@@ -35,9 +35,12 @@ public class Conseiller extends Employe{
 	public void setMonGerant(Gerant monGerant) {
 		this.monGerant = monGerant;
 	}
+	
+
 	@Override
 	public String toString() {
-		return "Conseiller [monGerant=" + monGerant + ", idGerant=" + idGerant + "]";
+		return "Conseiller [monGerant=" + monGerant + ", idGerant=" + idGerant + ", toString()=" + super.toString()
+				+ "]";
 	}
 
 	public void ajouterClient(Client c) {

@@ -10,7 +10,6 @@ public class Particulier extends Client{
 	private int numTelephone;
 	private String email;
 	
-	
 	public String getEmail() {
 		return email;
 	}
