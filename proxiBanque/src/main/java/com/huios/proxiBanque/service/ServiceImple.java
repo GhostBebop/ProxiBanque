@@ -58,13 +58,13 @@ public class ServiceImple implements IserviceAuditeur,IserviceConseiller,Iservic
 	@Override
 	public void ajouterCompteEpargne(Epargne epargne) {
 		// TODO Auto-generated method stub
-		
+		dao.ajouterCompteEpargne(epargne);
 	}
 
 	@Override
 	public void ajouterCompteCourant(Courant courant) {
 		// TODO Auto-generated method stub
-		
+		dao.ajouterCompteCourant(courant);
 	}
 
 	@Override

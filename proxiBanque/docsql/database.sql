@@ -31,7 +31,7 @@ create table if not exists comptes(
 id int auto_increment primary key,
 code int not null,
 solde int,
-dateCreation date not null,
+dateCreation varchar(32) not null,
 typeCompte varchar(32) not null,
 decouvert int,
 taux float

@@ -338,6 +338,7 @@ public class Fenetre extends JFrame{
 				c.setSolde(Integer.parseInt(text9.getText()));
 				c.setDateCreation(text10.getText());
 				c.setDecouvert(Float.parseFloat(text11.getText()));
+				c.setTypeCompte("courant");
 				IserviceConseiller is = new ServiceImple();
 				is.ajouterCompteCourant(c);				 
 				text8.setText("");
@@ -358,12 +359,13 @@ public class Fenetre extends JFrame{
 				epargne.setSolde(Integer.parseInt(text13.getText()));
 				epargne.setDateCreation(text14.getText());
 				epargne.setTaux(Float.parseFloat(text15.getText()));
+				epargne.setTypeCompte("epargne");
 				IserviceConseiller is = new ServiceImple();
 				is.ajouterCompteEpargne(epargne);				 
-				text11.setText("");
-				text12.setText("");	
-				text13.setText("");
-				text14.setText("");								
+				text12.setText("");
+				text13.setText("");	
+				text14.setText("");
+				text15.setText("");								
 			}
 		});	
 }

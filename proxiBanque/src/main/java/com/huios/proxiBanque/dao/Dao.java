@@ -1,6 +1,5 @@
 package com.huios.proxiBanque.dao;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -196,7 +195,7 @@ public class Dao implements Idao{
 			String login = "root";
 			String mdp ="";
 			Connection com = (Connection) DriverManager.getConnection(adresse, login, mdp);
-			String requete = "INSERT INTO clients(nom,adresse,telephone,typeClient) VALUES(?,?,?,?,?)";
+			String requete = "INSERT INTO clients(nom,adresse,telephone,typeClient) VALUES(?,?,?,?)";
 			PreparedStatement ps = (PreparedStatement) com.prepareStatement(requete);	
 			ps.setString(1, entreprise.getNomEntreprise());
 			ps.setString(2, entreprise.getAdresse());
@@ -642,6 +641,32 @@ public class Dao implements Idao{
 	public List<Conseiller> FindAllConseiller(Gerant gerant) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	@Override
+	public int rechercherClient(String nom) {
+		// TODO Auto-generated method stub
+		int id = 0;
+		try {			
+			Class.forName("com.mysql.jdbc.Driver");
+			String adresse = "jdbc:mysql://localhost:3306/testsq";
+			String login = "root";
+			String mdp ="";
+			Connection com = (Connection) DriverManager.getConnection(adresse, login, mdp);
+			String requete = "SELECT * FROM clients where nom like ?";
+			PreparedStatement ps = (PreparedStatement) com.prepareStatement(requete);
+			ResultSet rs = (ResultSet) ps.executeQuery();
+			ps.setString(1, nom);
+			ps.executeUpdate();
+			rs.next();
+			id = rs.getInt("id");
+											
+			ps.close();
+			com.close();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 		
+		return id;
 	}
 
 
