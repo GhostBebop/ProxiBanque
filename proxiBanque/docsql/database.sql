@@ -101,3 +101,13 @@ add idClient int not null;
 
 alter table comptes
 add constraint fk_client_compte foreign key (idClient) references comptes(id);
+
+-- 
+-- Ajouter une contrainte Compte Carte
+-- 
+
+alter table carte
+add idCompte int not null;
+
+alter table carte
+add constraint fk_compte_carte foreign key (idCompte) references comptes(id);
