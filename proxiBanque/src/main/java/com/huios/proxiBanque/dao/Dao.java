@@ -58,7 +58,7 @@ public class Dao implements Idao{
 		Carte carte = new Carte();
 		try {			
 			Class.forName("com.mysql.jdbc.Driver");
-			String adresse = "jdbc:mysql://localhost:3306/personnebdd";
+			String adresse = "jdbc:mysql://localhost:3306/testsq";
 			String login = "root";
 			String mdp ="";
 			Connection com = (Connection) DriverManager.getConnection(adresse, login, mdp);
@@ -92,7 +92,7 @@ public class Dao implements Idao{
 		boolean connect = false;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			String adresse = "jdbc:mysql://localhost:3306/personnebdd";
+			String adresse = "jdbc:mysql://localhost:3306/testsq";
 			String loginMysql = "root";
 			String mdpMysql ="";
 			Connection com = (Connection) DriverManager.getConnection(adresse, loginMysql, mdpMysql);
@@ -131,7 +131,7 @@ public class Dao implements Idao{
 		boolean connect = false;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			String adresse = "jdbc:mysql://localhost:3306/personnebdd";
+			String adresse = "jdbc:mysql://localhost:3306/testsq";
 			String loginMysql = "root";
 			String mdpMysql ="";
 			Connection com = (Connection) DriverManager.getConnection(adresse, loginMysql, mdpMysql);
@@ -168,7 +168,7 @@ public class Dao implements Idao{
 		// TODO Auto-generated method stub
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			String adresse = "jdbc:mysql://localhost:3306/personnebdd";
+			String adresse = "jdbc:mysql://localhost:3306/testsq";
 			String login = "root";
 			String mdp ="";
 			Connection com = (Connection) DriverManager.getConnection(adresse, login, mdp);
@@ -192,7 +192,7 @@ public class Dao implements Idao{
 		// TODO Auto-generated method stub
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			String adresse = "jdbc:mysql://localhost:3306/personnebdd";
+			String adresse = "jdbc:mysql://localhost:3306/testsq";
 			String login = "root";
 			String mdp ="";
 			Connection com = (Connection) DriverManager.getConnection(adresse, login, mdp);
@@ -216,7 +216,7 @@ public class Dao implements Idao{
 		// TODO Auto-generated method stub
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			String adresse = "jdbc:mysql://localhost:3306/personnebdd";
+			String adresse = "jdbc:mysql://localhost:3306/testsq";
 			String login = "root";
 			String mdp ="";
 			Connection com = (Connection) DriverManager.getConnection(adresse, login, mdp);
@@ -240,7 +240,7 @@ public class Dao implements Idao{
 		// TODO Auto-generated method stub
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			String adresse = "jdbc:mysql://localhost:3306/personnebdd";
+			String adresse = "jdbc:mysql://localhost:3306/testsq";
 			String login = "root";
 			String mdp ="";
 			Connection com = (Connection) DriverManager.getConnection(adresse, login, mdp);
@@ -264,7 +264,7 @@ public class Dao implements Idao{
 		// TODO Auto-generated method stub
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			String adresse = "jdbc:mysql://localhost:3306/personnebdd";
+			String adresse = "jdbc:mysql://localhost:3306/testsq";
 			String login = "root";
 			String mdp ="";
 			Connection com = (Connection) DriverManager.getConnection(adresse, login, mdp);
@@ -285,7 +285,7 @@ public class Dao implements Idao{
 		// TODO Auto-generated method stub
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			String adresse = "jdbc:mysql://localhost:3306/personnebdd";
+			String adresse = "jdbc:mysql://localhost:3306/testsq";
 			String login = "root";
 			String mdp ="";
 			Connection com = (Connection) DriverManager.getConnection(adresse, login, mdp);
@@ -307,7 +307,7 @@ public class Dao implements Idao{
 		try {
 			String requete = null;
 			Class.forName("com.mysql.jdbc.Driver");
-			String adresse = "jdbc:mysql://localhost:3306/personnebdd";
+			String adresse = "jdbc:mysql://localhost:3306/testsq";
 			String login = "root";
 			String mdp ="";
 			Connection com = (Connection) DriverManager.getConnection(adresse, login, mdp);
@@ -340,7 +340,7 @@ public class Dao implements Idao{
 		try {
 			String requete = null;
 			Class.forName("com.mysql.jdbc.Driver");
-			String adresse = "jdbc:mysql://localhost:3306/personnebdd";
+			String adresse = "jdbc:mysql://localhost:3306/testsq";
 			String login = "root";
 			String mdp ="";
 			Connection com = (Connection) DriverManager.getConnection(adresse, login, mdp);
@@ -372,7 +372,7 @@ public class Dao implements Idao{
 		// TODO Auto-generated method stub
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			String adresse = "jdbc:mysql://localhost:3306/personnebdd";
+			String adresse = "jdbc:mysql://localhost:3306/testsq";
 			String login = "root";
 			String mdp ="";
 			Connection com = (Connection) DriverManager.getConnection(adresse, login, mdp);
@@ -392,7 +392,7 @@ public class Dao implements Idao{
 		// TODO Auto-generated method stub
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			String adresse = "jdbc:mysql://localhost:3306/personnebdd";
+			String adresse = "jdbc:mysql://localhost:3306/testsq";
 			String login = "root";
 			String mdp ="";
 			Connection com = (Connection) DriverManager.getConnection(adresse, login, mdp);
@@ -412,7 +412,7 @@ public class Dao implements Idao{
 		// TODO Auto-generated method stub
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			String adresse = "jdbc:mysql://localhost:3306/personnebdd";
+			String adresse = "jdbc:mysql://localhost:3306/testsq";
 			String login = "root";
 			String mdp ="";
 			Connection com = (Connection) DriverManager.getConnection(adresse, login, mdp);
@@ -433,7 +433,7 @@ public class Dao implements Idao{
 		List<Particulier> particuliers = new ArrayList<Particulier>();
 		try {			
 			Class.forName("com.mysql.jdbc.Driver");
-			String adresse = "jdbc:mysql://localhost:3306/personnebdd";
+			String adresse = "jdbc:mysql://localhost:3306/testsq";
 			String login = "root";
 			String mdp ="";
 			Connection com = (Connection) DriverManager.getConnection(adresse, login, mdp);
@@ -466,7 +466,7 @@ public class Dao implements Idao{
 		List<Entreprise> entreprises = new ArrayList<Entreprise>();
 		try {			
 			Class.forName("com.mysql.jdbc.Driver");
-			String adresse = "jdbc:mysql://localhost:3306/personnebdd";
+			String adresse = "jdbc:mysql://localhost:3306/testsq";
 			String login = "root";
 			String mdp ="";
 			Connection com = (Connection) DriverManager.getConnection(adresse, login, mdp);
@@ -500,7 +500,7 @@ public class Dao implements Idao{
 				Carte carte = new Carte();
 				try {			
 					Class.forName("com.mysql.jdbc.Driver");
-					String adresse = "jdbc:mysql://localhost:3306/personnebdd";
+					String adresse = "jdbc:mysql://localhost:3306/testsq";
 					String login = "root";
 					String mdp ="";
 					Connection com = (Connection) DriverManager.getConnection(adresse, login, mdp);
@@ -537,7 +537,7 @@ public class Dao implements Idao{
 		List<Courant> courants = new ArrayList<Courant>();
 		try {			
 			Class.forName("com.mysql.jdbc.Driver");
-			String adresse = "jdbc:mysql://localhost:3306/personnebdd";
+			String adresse = "jdbc:mysql://localhost:3306/testsq";
 			String login = "root";
 			String mdp ="";
 			Connection com = (Connection) DriverManager.getConnection(adresse, login, mdp);
@@ -571,7 +571,7 @@ public class Dao implements Idao{
 		try {
 		
 			Class.forName("com.mysql.jdbc.Driver");
-			String adresse = "jdbc:mysql://localhost:3306/personnebdd";
+			String adresse = "jdbc:mysql://localhost:3306/testsq";
 			String login = "root";
 			String mdp ="";
 			Connection com = (Connection) DriverManager.getConnection(adresse, login, mdp);

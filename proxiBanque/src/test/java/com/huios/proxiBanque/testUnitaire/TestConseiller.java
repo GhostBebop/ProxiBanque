@@ -11,12 +11,15 @@ import org.junit.Test;
 import com.huios.proxiBanque.dao.Dao;
 import com.huios.proxiBanque.dao.Idao;
 import com.huios.proxiBanque.metier.Agence;
+import com.huios.proxiBanque.metier.Client;
 import com.huios.proxiBanque.metier.Conseiller;
 import com.huios.proxiBanque.metier.Gerant;
+import com.huios.proxiBanque.metier.Particulier;
 import com.mysql.jdbc.PreparedStatement;
 
 public class TestConseiller {
 	Idao dao = new Dao();
+	Conseiller c= new Conseiller();
 
 	@Test
 	public void test() {
@@ -48,7 +51,7 @@ public class TestConseiller {
 			e.printStackTrace();
 		}
 	}
-	@Ignore
+	
 	@Test
 	public void testCreationGerant() {
 		Gerant ger = new Gerant();
@@ -87,7 +90,7 @@ public class TestConseiller {
 		
 	}
 	
-	
+	@Ignore
 	@Test
 	public void testCreationConseil() {
 		Conseiller c= new Conseiller();
@@ -100,7 +103,19 @@ public class TestConseiller {
 		c.setPrenom("Conseiller1");
 		c.setTypeEmploye("conseiller");
 		dao.ajouterConseiller(c);
-		
+	}
+	
+	@Ignore
+	@Test
+	public void testCreationParticulier() {
+		Particulier p = new Particulier();
+		p.setNom("Particulier");
+		p.setPrenom("particulier");
+		p.setNumTelephone(410410);
+		p.setAdresse("Quartier Bellay 97232 STE LUCE");
+		p.setEmail("particulier@gmail.com");
+		p.setTypeClient("particulier");
+		dao.ajouterParticulier(p);
 		
 	}
 
